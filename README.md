@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-This repository contains code developed at 42 Porto for push_swap Project, from ... to ...
+This repository contains code developed at 42 Porto for push_swap Project, from 03/01/2023 to ...
 </p>
 
 <h2 align="left">
