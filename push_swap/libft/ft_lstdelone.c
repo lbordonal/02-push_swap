@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 01:14:17 by lbordona          #+#    #+#             */
-/*   Updated: 2022/11/09 15:57:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/06 15:14:02 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
+
+void	ft_delete(void *data)
+{
+	if (data != NULL)
+		free (data);
+}
+

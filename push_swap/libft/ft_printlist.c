@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_printlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 16:05:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/05 16:15:51 by lbordona         ###   ########.fr       */
+/*   Created: 2023/01/06 11:11:48 by lbordona          #+#    #+#             */
+/*   Updated: 2023/01/06 12:07:35 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void swap_a(t_list *stack_a, t_list *stack_b)
+void	ft_printlist(t_list *list)
 {
-	int size_a;
-	int size_b;
-
-	size_a = ft_lstsize(stack_a);
-	size_b = ft_lstsize(stack_b);
-
-	if (size_b == 0)
+	while (list)
 	{
-
+		ft_putstr_fd(list->content, 1);
+		list = list->next;
 	}
-
-	return ;
+	ft_printf("\n");
 }
