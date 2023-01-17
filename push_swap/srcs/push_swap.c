@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/17 17:04:18 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:49:20 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ int	main(void)
 	//pa(stack_a, stack_b);
 	//pb(stack_b, stack_a);
 	//ra(stack_a);
+	//ra(stack_a);
 	//rb(stack_b);
 	//rr(stack_a, stack_b);
+	rra(stack_a);
+	rrb(stack_b);
 
 
 	//se fizer qualquer operacao em seguida de outra, perco o primeiro da lista, pq?
