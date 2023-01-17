@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:05:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/06 15:33:56 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:49:04 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sa(t_list *stack_a)
 		stack_a->next = temp->next;
 		temp->next = stack_a;
 		stack_a = temp;
+		ft_printf("%s","sa[A]: ");
 		ft_printlist(stack_a);
 	}
 }
@@ -40,6 +41,7 @@ void	sb(t_list *stack_b)
 		stack_b->next = temp->next;
 		temp->next = stack_b;
 		stack_b = temp;
+		ft_printf("%s","sb[B]: ");
 		ft_printlist(stack_b);
 	}
 }
@@ -59,6 +61,7 @@ void	double_swap(t_list *stack_a, t_list *stack_b)
 		stack_a->next = temp_a->next;
 		temp_a->next = stack_a;
 		stack_a = temp_a;
+		ft_printf("%s","double_swap[A]: ");
 		ft_printlist(stack_a);
 	}
 	if (size_b > 1)
@@ -67,6 +70,7 @@ void	double_swap(t_list *stack_a, t_list *stack_b)
 		stack_b->next = temp_b->next;
 		temp_b->next = stack_b;
 		stack_b = temp_b;
+		ft_printf("%s","double_swap[B]: ");
 		ft_printlist(stack_b);
 	}
 }
