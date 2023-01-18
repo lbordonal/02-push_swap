@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 00:54:04 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:50:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	/* stack_a: */
 	stack_a1 = ft_lstnew("|5|");
 	stack_a2 = ft_lstnew("|7|");
-	stack_a3 = ft_lstnew("|8|");
+	stack_a3 = ft_lstnew("|2|");
 	stack_a1->next = stack_a2;
 	stack_a2->next = stack_a3;
 	stack_a3->next = NULL;
@@ -58,6 +58,9 @@ int	main(void)
 	//rra(stack_a);
 	//rrb(stack_b);
 	rrr(stack_a, stack_b);
+	//sort_test_one(stack_a);
+
+
 
 
 	//se fizer qualquer operacao em seguida de outra, perco o primeiro da lista, pq?

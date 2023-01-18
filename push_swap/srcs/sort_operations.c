@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 00:58:34 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:50:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ t_list	*create_stack_empty(t_list *stack_a)
 	return (stack_b);
 }
 
-void	sort_test_one(t_list *stack_a)
+/* void	sort_test_one(t_list *stack_a)
 {
+	int	value;
+	t_list	*temp;
+	t_list	*stack_b;
 
-}
+	stack_b = create_stack_empty(stack_a);
+
+
+	ft_printlist(stack_b);
+} */
