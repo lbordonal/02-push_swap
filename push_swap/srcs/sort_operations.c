@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 14:50:49 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 17:59:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,22 @@ t_list	*create_stack_empty(t_list *stack_a)
 	return (stack_b);
 }
 
-/* void	sort_test_one(t_list *stack_a)
+void	sort_test_one(t_list *stack_a)
 {
-	int	value;
-	t_list	*temp;
+	int		value;
+	int		next;
 	t_list	*stack_b;
 
+	value = 0;
+	next = 0;
 	stack_b = create_stack_empty(stack_a);
-
-
-	ft_printlist(stack_b);
-} */
+	while (stack_a)
+	{
+		value = ft_atoi(stack_a->content);
+		next = ft_atoi(stack_a->next);
+		ft_printf("%d", value);
+		ft_prinft("%d", next);
+		stack_a = stack_a->next;
+	}
+	ft_printlist(stack_a);
+}

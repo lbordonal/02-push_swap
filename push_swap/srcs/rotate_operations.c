@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:26:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 00:21:03 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:55:04 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ra(t_list *stack_a)
 	temp->next = stack_a;
 	stack_a = stack_a->next;
 	temp->next->next = NULL;
-	ft_printf("%s","ra[A]: ");
+	ft_printf("%s", "ra[A]: ");
 	ft_printlist(stack_a);
 }
 
@@ -32,7 +32,7 @@ void	rb(t_list *stack_b)
 	temp->next = stack_b;
 	stack_b = stack_b->next;
 	temp->next->next = NULL;
-	ft_printf("%s","rb[B]: ");
+	ft_printf("%s", "rb[B]: ");
 	ft_printlist(stack_b);
 }
 
@@ -49,8 +49,8 @@ void	rr(t_list *stack_a, t_list *stack_b)
 	temp_b->next = stack_b;
 	stack_b = stack_b->next;
 	temp_b->next->next = NULL;
-	ft_printf("%s","rr[A]: ");
+	ft_printf("%s", "rr[A]: ");
 	ft_printlist(stack_a);
-	ft_printf("%s","rr[B]: ");
+	ft_printf("%s", "rr[B]: ");
 	ft_printlist(stack_b);
 }
