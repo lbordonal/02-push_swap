@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 17:25:18 by lbordona          #+#    #+#              #
-#    Updated: 2023/01/17 16:41:25 by lbordona         ###   ########.fr        #
+#    Updated: 2023/01/18 00:51:32 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ NAME = push_swap
 SRCS = srcs/push_swap.c \
 		srcs/swap_operations.c \
 		srcs/push_operations.c \
-		srcs/rotate_operations.c
+		srcs/rotate_operations.c \
+		srcs/rerotate_operations.c \
+		srcs/sort_operations.c
 
 OBJS = $(SRCS:%.c=%.o)
 

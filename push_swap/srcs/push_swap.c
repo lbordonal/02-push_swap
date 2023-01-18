@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/17 18:49:20 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 00:54:04 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(void)
 	t_list	*stack_a2;
 	t_list	*stack_a3;
 	t_list	*stack_b; // stack_b = head_b
-	t_list	*stack_b1;
+/*	t_list	*stack_b1;
 	t_list	*stack_b2;
-	t_list	*stack_b3;
+	t_list	*stack_b3; */
 
 	/* stack_a: */
 	stack_a1 = ft_lstnew("|5|");
@@ -32,13 +32,14 @@ int	main(void)
 	stack_a3->next = NULL;
 	stack_a = stack_a1;
 	/* stack_b: */
-	stack_b1 = ft_lstnew("|Ariadne|");
+	/* stack_b1 = ft_lstnew("|Ariadne|");
 	stack_b2 = ft_lstnew("|Lucas|");
 	stack_b3 = ft_lstnew("|Matheus|");
 	stack_b1->next = stack_b2;
 	stack_b2->next = stack_b3;
 	stack_b3->next = NULL;
-	stack_b = stack_b1;
+	stack_b = stack_b1; */
+	stack_b = create_stack_empty(stack_a);
 	/* print listas: */
 	ft_printf("%s","[A]: ");
 	ft_printlist(stack_a);
@@ -54,8 +55,9 @@ int	main(void)
 	//ra(stack_a);
 	//rb(stack_b);
 	//rr(stack_a, stack_b);
-	rra(stack_a);
-	rrb(stack_b);
+	//rra(stack_a);
+	//rrb(stack_b);
+	rrr(stack_a, stack_b);
 
 
 	//se fizer qualquer operacao em seguida de outra, perco o primeiro da lista, pq?

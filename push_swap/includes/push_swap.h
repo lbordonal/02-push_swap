@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/17 18:49:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 00:57:35 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ void	pb(t_list *stack_b, t_list *stack_a);
 void	ra(t_list *stack_a);
 void	rb(t_list *stack_b);
 void	rr(t_list *stack_a, t_list *stack_b);
+/* rerotate_operations.c: */
+t_list	*get_stack_before_tail(t_list *stack);
 void	rra(t_list *stack_a);
 void	rrb(t_list *stack_b);
+void	rrr(t_list *stack_a, t_list *stack_b);
+/* sort_operations.c: */
+t_list	*create_stack_empty(t_list *stack_a);
+void	sort_test_one(t_list *stack_a);
 
 #endif
