@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 00:19:48 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 00:44:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,17 @@ int	main(int ac, char **av)
 		stack_b.finalpos = malloc(sizeof(int) * stack_a.len);
 	}
 	//ft_finalpos(&stack_a);
+	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
+	ft_printf("%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
+	/* sa(&stack_a);
+	ft_printf("%s\n", "[swap(stack_a)]");
+	ft_printstack(&stack_a);
+	double_swap(&stack_a, &stack_b);
+	ft_printf("%s\n", "[double_swap(stack_a)]");
+	ft_printstack(&stack_a);
+	ft_printf("%s\n", "[double_swap(stack_b)]");
+	ft_printstack(&stack_b); */
+
 }
