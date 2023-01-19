@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 15:08:29 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:49:06 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,17 @@ int	main(int ac, char **av)
 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
-	if (stack_b.len == 0)
-		ft_printf("%s\n", "-- stack_b empty --");
-	pa(&stack_a, &stack_b);
+	ft_printstack(&stack_b);
+	/* sa(&stack_a);
+	ft_printf("%s\n", "[swap(stack_a)]");
+	ft_printstack(&stack_a);*/
+	/* ss(&stack_a, &stack_b);
+	ft_printf("\n%s\n", "[double_swap(stack_a)]");
+	ft_printstack(&stack_a);
+	ft_printf("\n%s\n", "[double_swap(stack_b)]");
+	ft_printstack(&stack_b); */
+
+	/* pa(&stack_a, &stack_b);
 	ft_printf("\n%s\n", "[push_a(stack_a)]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[push_a(stack_b)]");
@@ -49,15 +57,14 @@ int	main(int ac, char **av)
 	pb(&stack_a, &stack_b);
 	ft_printf("%s\n", "[push_b(stack_a)]");
 	ft_printstack(&stack_a);
-	ft_printf("%s\n", "[push_b(stack_b)]");
-	ft_printstack(&stack_b);
-	/* sa(&stack_a);
-	ft_printf("%s\n", "[swap(stack_a)]");
-	ft_printstack(&stack_a);
-	double_swap(&stack_a, &stack_b);
-	ft_printf("%s\n", "[double_swap(stack_a)]");
-	ft_printstack(&stack_a);
-	ft_printf("%s\n", "[double_swap(stack_b)]");
-	ft_printstack(&stack_b); */
+	ft_printf("\n%s\n", "[push_b(stack_b)]");
+	ft_printstack(&stack_b);*/
+
+	/* rr(&stack_a, &stack_a);
+	ft_printf("%s\n", "[rotate_a(stack_a)]");
+	ft_printstack(&stack_a); */
+	/* rb(&stack_a);
+	ft_printf("%s\n", "[rotate_b(stack_b)]");
+	ft_printstack(&stack_a); */
 
 }

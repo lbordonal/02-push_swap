@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:05:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 00:44:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:48:23 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,8 @@ void	sb(t_stack *stack_b)
 	}
 }
 
-void	double_swap(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	int		temp;
-
-	if ((stack_a->len > 1) && (stack_b->len > 1))
-	{
-		temp = stack_a->stack[0];
-		stack_a->stack[0] = stack_a->stack[1];
-		stack_a->stack[1] = temp;
-		temp = stack_a->finalpos[0];
-		stack_a->finalpos[1] = stack_a->finalpos[0];
-		stack_a->finalpos[1] = temp;
-
-		temp = stack_b->stack[0];
-		stack_b->stack[0] = stack_b->stack[1];
-		stack_b->stack[1] = temp;
-		temp = stack_b->finalpos[0];
-		stack_b->finalpos[1] = stack_b->finalpos[0];
-		stack_b->finalpos[1] = temp;
-	}
+	sa(stack_a);
+	sb(stack_b);
 }

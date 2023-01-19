@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 13:41:51 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:43:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 /* swap_operations.c: */
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
-void	double_swap(t_stack *stack_a, t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
 /* push_operations.c: */
 void	pa(t_stack *stack_a, t_stack *stack_b);
 void	pb(t_stack *stack_b, t_stack *stack_a);
 /* rotate_operations.c: */
-void	ra(t_list *stack_a);
-void	rb(t_list *stack_b);
-void	rr(t_list *stack_a, t_list *stack_b);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
 /* rerotate_operations.c: */
 t_list	*get_stack_before_tail(t_list *stack);
 void	rra(t_list *stack_a);
