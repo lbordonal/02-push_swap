@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 10:37:56 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:41:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sb(t_stack *stack_b);
 void	double_swap(t_stack *stack_a, t_stack *stack_b);
 /* push_operations.c: */
 void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_list *stack_b, t_list *stack_a);
+void	pb(t_stack *stack_b, t_stack *stack_a);
 /* rotate_operations.c: */
 void	ra(t_list *stack_a);
 void	rb(t_list *stack_b);

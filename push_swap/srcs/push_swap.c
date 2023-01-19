@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 10:41:02 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:43:14 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ int	main(int ac, char **av)
 	ft_printstack(&stack_a);
 	ft_printf("%s\n", "[push_a(stack_b)]");
 	ft_printstack(&stack_b);
+	pb(&stack_a, &stack_b);
+	ft_printf("%s\n", "[push_b(stack_b)]");
+	ft_printstack(&stack_b);
+	ft_printf("%s\n", "[push_b(stack_a)]");
+	ft_printstack(&stack_a);
 	/* sa(&stack_a);
 	ft_printf("%s\n", "[swap(stack_a)]");
 	ft_printstack(&stack_a);
