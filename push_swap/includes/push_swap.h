@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 21:47:31 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/18 23:48:09 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
-typedef struct s_stack
-{
-	int			*stack;
-	int			*finalpos;
-	int			len;
-}				t_stack;
 
 /* swap_operations.c: */
 void	sa(t_list *stack_a);
