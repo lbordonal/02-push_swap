@@ -6,47 +6,56 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 23:49:55 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:31:27 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*create_stack_empty(t_list *stack_a)
+void	ft_talisca(t_stack *stack) //atribui indice dependendo do valor
 {
-	t_list	*stack_b;
-	t_list	*new;
-	int		size;
-	int		i;
+	int	i;
+	int	j;
+	int messi;
 
-	i = 1;
-	size = ft_lstsize(stack_a);
-	stack_b = ft_lstnew("|0|");
-	while (i < size)
+	i = 0;
+	while (i < stack->len)
 	{
-		new = ft_lstnew("|0|");
-		ft_lstadd_back(&stack_b, new);
+		j = 0;
+		messi = 0;
+		while (j < stack->len)
+		{
+			if (stack->stack[j] < stack->stack[i])
+				messi++;
+			j++;
+		}
+		stack->finalpos[i] = messi;
 		i++;
 	}
-	return (stack_b);
 }
 
-/* void	sort_test_one(t_list *stack_a)
+/* void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena os indices
 {
-	int		value;
-	int		next;
-	t_list	*stack_b;
+	int	i;
+	int	j;
+	int	temp;
+	int	temppos;
 
-	value = 0;
-	next = 0;
-	stack_b = create_stack_empty(stack_a);
-	while (stack_a)
+	i = 0;
+	j = 0;
+
+	while (i <= stack_a->len)
 	{
-		value = ft_atoi(stack_a->content);
-		next = ft_atoi(stack_a->next);
-		ft_printf("%d", value);
-		ft_prinft("%d", next);
-		stack_a = stack_a->next;
+		temp = stack_a->stack[0];
+		temppos = stack_a->finalpos[0];
+		while (stack_a->finalpos[j] != i)
+			j++;
+		stack_a->stack[i] = stack_a->stack[j];
+		stack_a->finalpos[i] = stack_a->finalpos[j];
+		stack_a->stack[j] = temp;
+		stack_a->finalpos[j] = temppos;
+		i++;
 	}
-	ft_printlist(stack_a);
+	pb(stack_b, stack_a);
 } */
+

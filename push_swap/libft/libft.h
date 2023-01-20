@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:34:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 00:17:28 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:12:46 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ void	ft_puthex(unsigned int n, const char type);
 void	ft_putptr(uintptr_t ptr);
 void	ft_printlist(t_list *list);
 void	ft_printstack(t_stack *stack_a);
-void	ft_finalpos(t_stack *stack);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);

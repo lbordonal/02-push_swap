@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:41:06 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 16:46:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:12:40 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,4 @@ int	ft_checkstack(t_stack *stack)
 		i++;
 	}
 	return (flag);
-}
-
-void	ft_finalpos(t_stack *stack) //indice final de cada item da stack
-{
-	int	i;
-	int	j;
-	int lower;
-
-	i = 0;
-	while (i < stack->len)
-	{
-		lower = 0;
-		j = 0;
-		while (j < stack->len)
-		{
-			if (stack->stack[j] < stack->stack[i])
-				lower++;
-			j++;
-		}
-		stack->finalpos[i] = lower;
-		i++;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/20 11:02:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:31:31 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,18 @@ int	main(int ac, char **av)
 		stack_b.stack = malloc(sizeof(int) * stack_a.len);
 		stack_b.finalpos = malloc(sizeof(int) * stack_a.len);
 	}
-	//ft_finalpos(&stack_a);
+	ft_talisca(&stack_a);
+	ft_printf("%s\n", "[stack_a]");
+	ft_printstack(&stack_a);
+	ft_printf("\n%s\n", "[stack_b]");
+
+	ft_printstack(&stack_b);
+
+	ft_marquinhos(&stack_a, &stack_b);
 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
-
 	/* sa(&stack_a);
 	ft_printf("%s\n", "[swap_a(stack_a)]");
 	ft_printstack(&stack_a);
