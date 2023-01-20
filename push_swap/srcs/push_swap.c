@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 17:07:21 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:02:50 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ int	main(int ac, char **av)
 	ft_printf("%s\n", "[double_rotate(stack_a)]");
 	ft_printstack(&stack_a); */
 
-	/* rra(&stack_a);
+	rra(&stack_a);
 	ft_printf("\n%s\n", "[rerotate_a(stack_a)]");
 	ft_printstack(&stack_a);
 	rrr(&stack_a, &stack_a);
 	ft_printf("%s\n", "[double_rerotate(stack_a)]");
-	ft_printstack(&stack_a); */
+	ft_printstack(&stack_a);
 }
