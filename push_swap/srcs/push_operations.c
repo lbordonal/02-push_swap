@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:53:30 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 15:02:03 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:28:44 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 		i++;
 	}
 	stack_a->len--;
+	ft_printf("%s\n", "pa");
 }
 
 void	pb(t_stack *stack_b, t_stack *stack_a)
@@ -58,4 +59,5 @@ void	pb(t_stack *stack_b, t_stack *stack_a)
 		i++;
 	}
 	stack_b->len--;
+	ft_printf("%s\n", "pb");
 }

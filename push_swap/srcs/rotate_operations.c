@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:26:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/19 16:43:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:28:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ra(t_stack *stack_a)
 		i++;
 	}
 	stack_a->stack[len] = temp;
+	ft_printf("%s\n", "ra");
 }
 
 void	rb(t_stack *stack_b)
@@ -44,10 +45,12 @@ void	rb(t_stack *stack_b)
 		i++;
 	}
 	stack_b->stack[len] = temp;
+	ft_printf("%s\n", "rb");
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);
+	ft_printf("%s\n", "rr");
 }

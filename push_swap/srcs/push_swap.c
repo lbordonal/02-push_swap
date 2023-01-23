@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/20 15:31:31 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:45:56 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,16 @@ int	main(int ac, char **av)
 
 	ft_printstack(&stack_b);
 
-	ft_marquinhos(&stack_a, &stack_b);
+	/* ft_marquinhos(&stack_a, &stack_b);
 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
-	ft_printstack(&stack_b);
-	/* sa(&stack_a);
+	ft_printstack(&stack_b); */
+
+	sa(&stack_a);
 	ft_printf("%s\n", "[swap_a(stack_a)]");
 	ft_printstack(&stack_a);
-	ss(&stack_a, &stack_b);
+/* 	ss(&stack_a, &stack_b);
 	ft_printf("\n%s\n", "[double_swap(stack_a)]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[double_swap(stack_b)]");
@@ -74,10 +75,10 @@ int	main(int ac, char **av)
 	ft_printf("%s\n", "[double_rotate(stack_a)]");
 	ft_printstack(&stack_a); */
 
-	rra(&stack_a);
+	/* rra(&stack_a);
 	ft_printf("\n%s\n", "[rerotate_a(stack_a)]");
 	ft_printstack(&stack_a);
 	rrr(&stack_a, &stack_a);
 	ft_printf("%s\n", "[double_rerotate(stack_a)]");
-	ft_printstack(&stack_a);
+	ft_printstack(&stack_a); */
 }
