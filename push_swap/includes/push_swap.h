@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/20 15:31:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:39:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 /* sort_operations.c: */
 void	ft_talisca(t_stack *stack);
-//void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
+void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
 
 #endif

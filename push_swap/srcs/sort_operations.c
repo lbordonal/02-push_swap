@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/20 15:31:27 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:42:42 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,29 @@ void	ft_talisca(t_stack *stack) //atribui indice dependendo do valor
 	}
 }
 
-/* void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena os indices
+void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena os indices
 {
+	int	bigger_index;
 	int	i;
-	int	j;
-	int	temp;
-	int	temppos;
 
-	i = 0;
-	j = 0;
-
-	while (i <= stack_a->len)
+	bigger_index = stack_a->len - 1;
+	i = bigger_index;
+	while (i >= 0)
 	{
-		temp = stack_a->stack[0];
-		temppos = stack_a->finalpos[0];
-		while (stack_a->finalpos[j] != i)
-			j++;
-		stack_a->stack[i] = stack_a->stack[j];
-		stack_a->finalpos[i] = stack_a->finalpos[j];
-		stack_a->stack[j] = temp;
-		stack_a->finalpos[j] = temppos;
-		i++;
+		if (stack_a->finalpos[0] == bigger_index)
+		{
+			pb(stack_b, stack_a);
+			bigger_index--;
+		}
+		else if (stack_a->stack[0] < stack_a->stack[1])
+			ra(stack_a);
+		else if (stack_a->stack[0] < stack_a->stack[1])
+		{
+			sa(stack_a);
+			ra(stack_a);
+		}
+		ft_talisca(stack_a);
+		i--;
 	}
-	pb(stack_b, stack_a);
-} */
+}
 

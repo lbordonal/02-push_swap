@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:53:30 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/23 21:28:44 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:44:38 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	stack_b->len++;
 	if (stack_b->len > 1)
 	{
-		while (i <= stack_b->len)
+		while (i < stack_b->len)
 		{
 			stack_b->stack[i + 1] = stack_b->stack[i];
 			i++;
@@ -45,7 +45,7 @@ void	pb(t_stack *stack_b, t_stack *stack_a)
 	stack_a->len++;
 	if (stack_a->len > 1)
 	{
-		while (i <= stack_a->len)
+		while (i < stack_a->len)
 		{
 			stack_a->stack[i + 1] = stack_a->stack[i];
 			i++;
