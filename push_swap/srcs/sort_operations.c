@@ -6,47 +6,64 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 17:59:39 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/31 23:35:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*create_stack_empty(t_list *stack_a)
+void	ft_talisca(t_stack *stack) //atribui indice dependendo do valor
 {
-	t_list	*stack_b;
-	t_list	*new;
-	int		size;
-	int		i;
+	int	i;
+	int	j;
+	int messi;
 
-	i = 1;
-	size = ft_lstsize(stack_a);
-	stack_b = ft_lstnew("|0|");
-	while (i < size)
+	i = 0;
+	while (i < stack->len)
 	{
-		new = ft_lstnew("|0|");
-		ft_lstadd_back(&stack_b, new);
+		j = 0;
+		messi = 0;
+		while (j < stack->len)
+		{
+			if (stack->stack[j] < stack->stack[i])
+				messi++;
+			j++;
+		}
+		stack->finalpos[i] = messi;
 		i++;
 	}
-	return (stack_b);
 }
 
-void	sort_test_one(t_list *stack_a)
+void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena os indices
 {
-	int		value;
-	int		next;
-	t_list	*stack_b;
+	int	bigger_index;
+	int	i;
+	int	counter;
 
-	value = 0;
-	next = 0;
-	stack_b = create_stack_empty(stack_a);
-	while (stack_a)
+	bigger_index = stack_a->len - 1;
+	i = bigger_index + 1;
+	counter = 0;
+	while (i > 0)
 	{
-		value = ft_atoi(stack_a->content);
-		next = ft_atoi(stack_a->next);
-		ft_printf("%d", value);
-		ft_prinft("%d", next);
-		stack_a = stack_a->next;
+		counter++;
+		if (stack_a->finalpos[0] == bigger_index)
+		{
+			pb(stack_a, stack_b);
+			bigger_index--;
+		}
+		else if (stack_a->stack[0] < stack_a->stack[1])
+			ra(stack_a);
+		else if (stack_a->stack[0] > stack_a->stack[1])
+		{
+			sa(stack_a);
+			ra(stack_a);
+		}
+		i = stack_a->len;
 	}
-	ft_printlist(stack_a);
+	ft_printf("\n%s%d\n\n", "Operations: ", counter);
+	ft_printf("%s\n", "stack_a:");
+	ft_printstack(stack_a);
+	ft_printf("\n%s\n", "stack_b:");
+	ft_printstack(stack_b);
+	ft_printf("\n");
 }

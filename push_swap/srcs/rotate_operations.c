@@ -6,51 +6,59 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:26:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 15:55:04 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:32:14 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ra(t_list *stack_a)
+void	ra(t_stack *stack_a)
 {
-	t_list	*temp;
+	int	i;
+	int	len;
+	int	temp;
+	int	temppos;
 
-	temp = ft_lstlast(stack_a);
-	temp->next = stack_a;
-	stack_a = stack_a->next;
-	temp->next->next = NULL;
-	ft_printf("%s", "ra[A]: ");
-	ft_printlist(stack_a);
+	i = 0;
+	len = stack_a->len - 1;
+	temp = stack_a->stack[0];
+	temppos = stack_a->finalpos[0];
+	while (i < stack_a->len)
+	{
+		stack_a->stack[i] = stack_a->stack[i + 1];
+		stack_a->finalpos[i] = stack_a->finalpos[i + 1];
+		i++;
+	}
+	stack_a->stack[len] = temp;
+	stack_a->finalpos[len] = temppos;
+	ft_printf("%s\n", "ra");
 }
 
-void	rb(t_list *stack_b)
+void	rb(t_stack *stack_b)
 {
-	t_list	*temp;
+	int	i;
+	int	len;
+	int	temp;
+	int	temppos;
 
-	temp = ft_lstlast(stack_b);
-	temp->next = stack_b;
-	stack_b = stack_b->next;
-	temp->next->next = NULL;
-	ft_printf("%s", "rb[B]: ");
-	ft_printlist(stack_b);
+	i = 0;
+	len = stack_b->len - 1;
+	temp = stack_b->stack[0];
+	temppos = stack_b->finalpos[0];
+	while (i < stack_b->len)
+	{
+		stack_b->stack[i] = stack_b->stack[i + 1];
+		stack_b->finalpos[i] = stack_b->finalpos[i + 1];
+		i++;
+	}
+	stack_b->stack[len] = temp;
+	stack_b->finalpos[len] = temppos;
+	ft_printf("%s\n", "rb");
 }
 
-void	rr(t_list *stack_a, t_list *stack_b)
+void	rr(t_stack *stack_a, t_stack *stack_b)
 {
-	t_list	*temp_a;
-	t_list	*temp_b;
-
-	temp_a = ft_lstlast(stack_a);
-	temp_a->next = stack_a;
-	stack_a = stack_a->next;
-	temp_a->next->next = NULL;
-	temp_b = ft_lstlast(stack_b);
-	temp_b->next = stack_b;
-	stack_b = stack_b->next;
-	temp_b->next->next = NULL;
-	ft_printf("%s", "rr[A]: ");
-	ft_printlist(stack_a);
-	ft_printf("%s", "rr[B]: ");
-	ft_printlist(stack_b);
+	ra(stack_a);
+	rb(stack_b);
+	ft_printf("%s\n", "rr");
 }

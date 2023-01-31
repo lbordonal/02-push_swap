@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,52 +7,64 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:53:30 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/18 18:00:23 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:44:38 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pa(t_list *stack_a, t_list *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	int		size_b;
-	t_list	*delete;
-	t_list	*temp;
+	int	i;
 
-	size_b = ft_lstsize(stack_b);
-	temp = ft_lstnew(stack_b->content);
-	if (size_b > 0)
+	i = stack_a->len;
+	stack_a->len++;
+	if (stack_a->len > 1)
 	{
-		ft_lstadd_front(&stack_a, temp);
-		ft_printf("%s", "pa[A]: ");
-		ft_printlist(stack_a);
-		delete = stack_b;
-		stack_b = stack_b->next;
-		free(delete);
-		ft_printf("%s", "pa[B]: ");
-		ft_printlist(stack_b);
+		while (i > 0)
+		{
+			stack_a->stack[i] = stack_a->stack[i - 1];
+			stack_a->finalpos[i] = stack_a->finalpos[i - 1];
+			i--;
+		}
 	}
-	return ;
+	i = 0;
+	stack_a->stack[i] = stack_b->stack[i];
+	stack_a->finalpos[i] = stack_b->finalpos[i];
+	while (i <= stack_b->len)
+	{
+		stack_b->stack[i] = stack_b->stack[i + 1];
+		stack_b->finalpos[i] = stack_b->finalpos[i + 1];
+		i++;
+	}
+	stack_b->len--;
+	ft_printf("%s\n", "pa");
 }
 
-void	pb(t_list *stack_b, t_list *stack_a)
+void	pb(t_stack *stack_a, t_stack *stack_b)
 {
-	int		size_a;
-	t_list	*delete;
-	t_list	*temp;
+	int	i;
 
-	size_a = ft_lstsize(stack_a);
-	temp = ft_lstnew(stack_a->content);
-	if (size_a > 0)
+	i = stack_b->len;
+	stack_b->len++;
+	if (stack_b->len > 1)
 	{
-		ft_lstadd_front(&stack_b, temp);
-		ft_printf("%s", "pb[B]: ");
-		ft_printlist(stack_b);
-		delete = stack_a;
-		stack_a = stack_a->next;
-		free(delete);
-		ft_printf("%s", "pb[A]: ");
-		ft_printlist(stack_a);
+		while (i > 0)
+		{
+			stack_b->stack[i] = stack_b->stack[i - 1];
+			stack_b->finalpos[i] = stack_b->finalpos[i - 1];
+			i--;
+		}
 	}
-	return ;
+	i = 0;
+	stack_b->stack[i] = stack_a->stack[i];
+	stack_b->finalpos[i] = stack_a->finalpos[i];
+	while (i <= stack_a->len)
+	{
+		stack_a->stack[i] = stack_a->stack[i + 1];
+		stack_a->finalpos[i] = stack_a->finalpos[i + 1];
+		i++;
+	}
+	stack_a->len--;
+	ft_printf("%s\n", "pb");
 }
