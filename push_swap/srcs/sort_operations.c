@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/01 18:45:09 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:19:21 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,27 +109,34 @@ void	ft_sort_two(t_stack *stack_a)
 
 void	ft_sort_five(t_stack *stack_a, t_stack *stack_b) //corrigir, estou usando ft_marquinhos dentro, nao pode passar de 12 moves
 {
-	int	bigger_index;
-	int	i;
+//	int	top_a; //menor valor em a depois do push_b
+//	int	bottom_a; //maior valor em a depois do push_b
+//	int	i;
+	int	*a;
+	int	*b;
 
-	bigger_index = stack_a->len - 1;
-	i = stack_a->len;
-	while (i > 3)
+	a = stack_a->stack;
+	b = stack_b->stack;
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	ft_talisca(stack_a);
+	ft_sort_two(stack_b);
+	ft_sort_three(stack_a);
+
+	if ((b[0] > a[2])) //b0 e b1 maiores que a2
 	{
-		if (stack_a->finalpos[0] == bigger_index)
-		{
-			pb(stack_a, stack_b);
-			bigger_index--;
-		}
-		else if (stack_a->stack[0] < stack_a->stack[1])
-			ra(stack_a);
-		else if (stack_a->stack[0] > stack_a->stack[1])
-		{
-			sa(stack_a);
-			ra(stack_a);
-		}
-		i = stack_a->len;
+		pa(stack_a, stack_b);
+		ra(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
 	}
+	else if (b[1] < a[0]) //b0 e b1 menores que a0
+	{
+		rb(stack_b);
+		pa(stack_a, stack_b);
+		pa(stack_a, stack_b);
+	}
+	else if (b[0] < a[0])
 	//ft_printf("\n%s%d\n\n", "Operations: ", counter);
 	ft_printf("%s\n", "stack_a:");
 	ft_printstack(stack_a);
