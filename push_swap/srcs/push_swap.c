@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/31 23:31:42 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:45:12 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,17 @@ int	main(int ac, char **av)
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
 
-	ft_marquinhos(&stack_a, &stack_b);
+	/* ft_marquinhos(&stack_a, &stack_b); */
+
+	if (stack_a.len == 2)
+		ft_sort_two(&stack_a);
+	else if (stack_a.len == 3)
+		ft_sort_three(&stack_a);
+	else if (stack_a.len == 5)
+		ft_sort_five(&stack_a, &stack_b);
+	else
+		ft_marquinhos(&stack_a, &stack_b);
+
 /* 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");

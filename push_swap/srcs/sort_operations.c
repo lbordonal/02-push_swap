@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/31 23:45:41 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:45:09 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,74 @@ void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena os indices
 	ft_printstack(stack_b);
 	ft_printf("\n");
 }
+
+void	ft_sort_three(t_stack *stack_a)
+{
+	int	*s;
+	int	counter;
+
+	counter = 1;
+	s = stack_a->stack;
+	if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] > s[0]))
+		sa(stack_a);
+	else if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] < s[0]))
+		ra(stack_a);
+	else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
+		rra(stack_a);
+	else if ((s[0] > s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
+	{
+		sa(stack_a);
+		rra(stack_a);
+		counter = 2;
+	}
+	else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] > s[0]))
+	{
+		sa(stack_a);
+		ra(stack_a);
+		counter = 2;
+	}
+	ft_printf("\n%s%d\n\n", "Operations: ", counter);
+	ft_printf("%s\n", "stack_a:");
+	ft_printstack(stack_a);
+}
+
+void	ft_sort_two(t_stack *stack_a)
+{
+	if (stack_a->stack[0] > stack_a->stack[1])
+		sa(stack_a);
+	ft_printf("\n%s%d\n\n", "Operations: ", 1);
+	ft_printf("%s\n", "stack_a:");
+	ft_printstack(stack_a);
+}
+
+void	ft_sort_five(t_stack *stack_a, t_stack *stack_b) //corrigir, estou usando ft_marquinhos dentro, nao pode passar de 12 moves
+{
+	int	bigger_index;
+	int	i;
+
+	bigger_index = stack_a->len - 1;
+	i = stack_a->len;
+	while (i > 3)
+	{
+		if (stack_a->finalpos[0] == bigger_index)
+		{
+			pb(stack_a, stack_b);
+			bigger_index--;
+		}
+		else if (stack_a->stack[0] < stack_a->stack[1])
+			ra(stack_a);
+		else if (stack_a->stack[0] > stack_a->stack[1])
+		{
+			sa(stack_a);
+			ra(stack_a);
+		}
+		i = stack_a->len;
+	}
+	//ft_printf("\n%s%d\n\n", "Operations: ", counter);
+	ft_printf("%s\n", "stack_a:");
+	ft_printstack(stack_a);
+	ft_printf("\n%s\n", "stack_b:");
+	ft_printstack(stack_b);
+	ft_printf("\n");
+}
+
