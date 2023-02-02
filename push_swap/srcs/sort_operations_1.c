@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 11:57:53 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:55:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,3 +113,39 @@ int	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 	return (operations);
 }
 
+int	ft_sort_ten(t_stack *stack_a, t_stack *stack_b)
+{
+	int	i;
+	int	operations;
+
+	i = 0;
+	operations = 0;
+	(void)stack_b;
+	ft_talisca(stack_a);
+	//ft_printf("%d\n%d", stack_a->stack[0], stack_a->finalpos[0]);
+	while (stack_a->len > 0)
+	{
+		while (stack_a->stack[i] != stack_a->finalpos[0])
+		{
+			//ft_printf("%d\n", stack_a->stack[i]);
+			//ft_printf("%d\n", stack_a->finalpos[0]);
+			ra(stack_a);
+			operations++;
+			i++;
+		}
+		ft_printf("%s%d\n","achei-> ", stack_a->stack[0]);
+		pb(stack_a, stack_b);
+		operations++;
+		ft_printstack(stack_a);
+		ft_printf("\n");
+		ft_printstack(stack_b);
+		ft_talisca(stack_a);
+	}
+	while (stack_b->len > 0)
+	{
+		pa(stack_a, stack_b);
+		operations++;
+	}
+	ft_printstack(stack_a);
+	return (operations);
+}

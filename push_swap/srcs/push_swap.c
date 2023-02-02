@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 11:42:14 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:50:44 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ int	main(int ac, char **av)
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
+	ft_sort_ten(&stack_a, &stack_b);
+	ft_printf("\n%s%d\n\n", "Operations: ", operations);
 
-
-	if (stack_a.len == 2)
+/* 	if (stack_a.len == 2)
 		operations += ft_sort_two(&stack_a);
 	else if (stack_a.len == 3)
 		operations += ft_sort_three(&stack_a);
@@ -58,7 +59,7 @@ int	main(int ac, char **av)
 	ft_printf("\n%s\n", "stack_b:");
 	ft_printstack(&stack_b);
 
-
+ */
 
 /* 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
