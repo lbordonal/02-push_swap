@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/01 18:45:10 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:57:25 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
-/* sort_operations.c: */
+/* sort_operations_1.c: */
+int		ft_sort_two(t_stack *stack_a);
+int		ft_sort_two_reverse(t_stack *stack_a);
+int		ft_sort_three(t_stack *stack_a);
+int		ft_sort_five(t_stack *stack_a, t_stack *stack_b);
+/* sort_operations_2.c: */
 void	ft_talisca(t_stack *stack);
-void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
-void	ft_sort_three(t_stack *stack_a);
-void	ft_sort_two(t_stack *stack_a);
-void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
+int		ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
+/* sort_utils.c: */
 
 #endif
