@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 12:50:44 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:03:24 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,66 +37,22 @@ int	main(int ac, char **av)
 		stack_b.stack = malloc(sizeof(int) * stack_a.len);
 		stack_b.finalpos = malloc(sizeof(int) * stack_a.len);
 	}
-	ft_talisca(&stack_a);
 	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
-	ft_sort_ten(&stack_a, &stack_b);
-	ft_printf("\n%s%d\n\n", "Operations: ", operations);
 
-/* 	if (stack_a.len == 2)
+	if (stack_a.len == 2)
 		operations += ft_sort_two(&stack_a);
 	else if (stack_a.len == 3)
 		operations += ft_sort_three(&stack_a);
 	else if (stack_a.len == 5)
 		operations += ft_sort_five(&stack_a, &stack_b);
 	else
-		operations += ft_marquinhos(&stack_a, &stack_b);
-	ft_printf("\n%s%d\n\n", "Operations: ", operations);
-	ft_printf("%s\n", "stack_a:");
-	ft_printstack(&stack_a);
-	ft_printf("\n%s\n", "stack_b:");
-	ft_printstack(&stack_b);
-
- */
-
-/* 	ft_printf("%s\n", "[stack_a]");
+		operations += ft_crazy_sort(&stack_a, &stack_b);
+	ft_printf("\n%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
-	ft_printstack(&stack_b); */
-
-	/* sa(&stack_a);
-	ft_printf("%s\n", "[swap_a(stack_a)]");
-	ft_printstack(&stack_a); */
-/* 	ss(&stack_a, &stack_b);
-	ft_printf("\n%s\n", "[double_swap(stack_a)]");
-	ft_printstack(&stack_a);
-	ft_printf("\n%s\n", "[double_swap(stack_b)]");
-	ft_printstack(&stack_b); */
-
-	/* pa(&stack_a, &stack_b);
-	ft_printf("\n%s\n", "[push_a(stack_a)]");
-	ft_printstack(&stack_a);
-	ft_printf("\n%s\n", "[push_a(stack_b)]");
-	ft_printstack(&stack_b); */
-	/* pb(&stack_a, &stack_b);
-	ft_printf("%s\n", "[push_b(stack_a)]");
-	ft_printstack(&stack_a);
-	ft_printf("\n%s\n", "[push_b(stack_b)]");
-	ft_printstack(&stack_b); */
-
-	/* ra(&stack_a);
-	ft_printf("%s\n", "[rotate_a(stack_a)]");
-	ft_printstack(&stack_a); */
-	/* rr(&stack_a, &stack_a);
-	ft_printf("%s\n", "[double_rotate(stack_a)]");
-	ft_printstack(&stack_a); */
-
-	/* rra(&stack_a);
-	ft_printf("\n%s\n", "[rerotate_a(stack_a)]");
-	ft_printstack(&stack_a); */
-	/* rrr(&stack_a, &stack_a);
-	ft_printf("%s\n", "[double_rerotate(stack_a)]");
-	ft_printstack(&stack_a); */
+	ft_printstack(&stack_b);
+	ft_printf("\n%s%d\n\n", "Operations: ", operations);
 }
