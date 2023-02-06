@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 16:03:24 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:44:15 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	main(int ac, char **av)
 		operations += ft_sort_five(&stack_a, &stack_b);
 	else
 		operations += ft_crazy_sort(&stack_a, &stack_b);
-	ft_printf("\n%s\n", "[stack_a]");
+	/* ft_printf("\n%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
-	ft_printstack(&stack_b);
+	ft_printstack(&stack_b); */
 	ft_printf("\n%s%d\n\n", "Operations: ", operations);
 }
