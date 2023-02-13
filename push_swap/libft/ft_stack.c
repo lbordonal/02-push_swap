@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:41:06 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/20 13:12:40 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:34:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	ft_checkstack(t_stack *stack)
 			if ((stack->stack[i] == stack->stack[j])
 				|| (stack->stack[j] > INT_MAX) || (stack->stack[j] < INT_MIN))
 			{
-					flag = 1;
-					ft_printf("%s\n", "Stack error! :(");
-					break;
+				flag = 1;
+				ft_printf("%s\n", "Stack error! :(");
+				break ;
 			}
 			j++;
 		}

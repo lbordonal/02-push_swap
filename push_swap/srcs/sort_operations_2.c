@@ -6,17 +6,17 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 11:22:14 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:35:38 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_talisca(t_stack *stack) //atribui indice dependendo do valor
+void	ft_talisca(t_stack *stack)
 {
 	int	i;
 	int	j;
-	int messi;
+	int	messi;
 
 	i = 0;
 	while (i < stack->len)
@@ -34,7 +34,7 @@ void	ft_talisca(t_stack *stack) //atribui indice dependendo do valor
 	}
 }
 
-int	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena mas sem critério
+int	ft_marquinhos(t_stack *stack_a, t_stack *stack_b)
 {
 	int	bigger_index;
 	int	i;
@@ -60,5 +60,26 @@ int	ft_marquinhos(t_stack *stack_a, t_stack *stack_b) //ordena mas sem critério
 		}
 		i = stack_a->len;
 	}
-	return(operations);
+	return (operations);
+}
+
+int	ft_sort_10(t_stack *stack_a, t_stack *stack_b)
+{
+	int	top;
+	int	bottom;
+	int	middle;
+	int	len;
+	int	operations;
+
+	(void)stack_b;
+	operations = 0;
+	ft_talisca(stack_a);
+	len = stack_a->len;
+	top = stack_a->finalpos[len - 1];
+	bottom = stack_a->finalpos[0];
+	middle = stack_a->finalpos[find_middle(stack_a)];
+	ft_printf("%s%d%s%d\n\n", "Value top = ", top, "Pos = ", len);
+	ft_printf("%s%d%s\n\n", "Value bottom = ", bottom, "Pos = 0");
+	ft_printf("%s%d%s%d\n\n", "Value middle = ", middle, "Pos = ", find_middle(stack_a));
+	return (operations);
 }

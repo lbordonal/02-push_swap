@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/02 16:03:10 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:42:29 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_sort_two(t_stack *stack_a)
 	if (stack_a->stack[0] < stack_a->stack[1])
 	{
 		sa(stack_a);
-		operations++;;
+		operations++;
 	}
 	return (operations);
 }
@@ -33,7 +33,7 @@ int	ft_sort_two_reverse(t_stack *stack_a)
 	if (stack_a->stack[0] < stack_a->stack[1])
 	{
 		sa(stack_a);
-		operations++;;
+		operations++;
 	}
 	return (operations);
 }
@@ -67,7 +67,6 @@ int	ft_sort_three(t_stack *stack_a)
 	}
 	return (operations);
 }
-
 
 int	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 {

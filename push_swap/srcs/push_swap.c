@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/07 10:11:05 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:34:09 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,8 @@ int	main(int ac, char **av)
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
 	ft_printf("\n%s%d\n\n", "Operations: ", operations);
+	//ft_printf("%s%d\n", "Middle index = ", find_middle(&stack_a));
+	ft_sort_10(&stack_a, &stack_b);
+	ft_printf("\n%s%d\n\n", "Operations: ", operations);
+
 }
