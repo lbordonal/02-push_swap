@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/13 11:35:38 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:17:57 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,69 @@ int	ft_sort_10(t_stack *stack_a, t_stack *stack_b)
 	int	middle;
 	int	len;
 	int	operations;
+	int	i;
 
-	(void)stack_b;
+	i = 0;
 	operations = 0;
 	ft_talisca(stack_a);
 	len = stack_a->len;
 	top = stack_a->finalpos[len - 1];
 	bottom = stack_a->finalpos[0];
 	middle = stack_a->finalpos[find_middle(stack_a)];
-	ft_printf("%s%d%s%d\n\n", "Value top = ", top, "Pos = ", len);
+	while (stack_a->finalpos[i] >= stack_a->finalpos[middle])
+	{
+		pb(stack_a, stack_b);
+		i++;
+	}
+
+/* 	ft_printf("%s%d%s%d\n\n", "Value top = ", top, "Pos = ", len);
 	ft_printf("%s%d%s\n\n", "Value bottom = ", bottom, "Pos = 0");
-	ft_printf("%s%d%s%d\n\n", "Value middle = ", middle, "Pos = ", find_middle(stack_a));
+	ft_printf("%s%d%s%d\n\n", "Value middle = ", middle, "Pos = ", find_middle(stack_a)); */
+	return (operations);
+}
+
+int	ft_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	int	i;
+	int	j;
+	int	operations;
+	int	top;
+	int	size;
+	int	max_num;
+	int	max_bits;
+
+	i = 0;
+	j = 0;
+	operations = 0;
+	ft_talisca(stack_a);
+	top = stack_a->finalpos[0];
+	size = stack_a->len;
+	max_num = size - 1;
+	max_bits = 0;
+	while ((max_num >> max_bits) != 0)
+		max_bits++;
+	while (i < max_bits)
+	{
+		while (j < size)
+		{
+			if (((top >> i) & 1) == 1)
+			{
+				ra(stack_a);
+				operations++;
+			}
+			else
+			{
+				pb(stack_a, stack_b);
+				operations++;
+			}
+			j++;
+		}
+		i++;
+	}
+	while (stack_b->len > 0)
+	{
+		pa(stack_a, stack_b);
+		operations++;
+	}
 	return (operations);
 }
