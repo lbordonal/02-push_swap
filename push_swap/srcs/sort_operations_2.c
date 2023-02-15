@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/14 19:17:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:25:53 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_marquinhos(t_stack *stack_a, t_stack *stack_b)
 	return (operations);
 }
 
-int	ft_sort_10(t_stack *stack_a, t_stack *stack_b)
+/* int	ft_sort_10(t_stack *stack_a, t_stack *stack_b)
 {
 	int	top;
 	int	bottom;
@@ -85,11 +85,11 @@ int	ft_sort_10(t_stack *stack_a, t_stack *stack_b)
 		i++;
 	}
 
-/* 	ft_printf("%s%d%s%d\n\n", "Value top = ", top, "Pos = ", len);
+	ft_printf("%s%d%s%d\n\n", "Value top = ", top, "Pos = ", len);
 	ft_printf("%s%d%s\n\n", "Value bottom = ", bottom, "Pos = 0");
-	ft_printf("%s%d%s%d\n\n", "Value middle = ", middle, "Pos = ", find_middle(stack_a)); */
+	ft_printf("%s%d%s%d\n\n", "Value middle = ", middle, "Pos = ", find_middle(stack_a));
 	return (operations);
-}
+} */
 
 int	ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
@@ -97,42 +97,49 @@ int	ft_sort(t_stack *stack_a, t_stack *stack_b)
 	int	j;
 	int	operations;
 	int	top;
-	int	size;
+	int	size_a;
+	int	size_b;
 	int	max_num;
 	int	max_bits;
 
 	i = 0;
-	j = 0;
 	operations = 0;
 	ft_talisca(stack_a);
 	top = stack_a->finalpos[0];
-	size = stack_a->len;
-	max_num = size - 1;
+	size_a = stack_a->len;
+	max_num = size_a - 1;
 	max_bits = 0;
 	while ((max_num >> max_bits) != 0)
 		max_bits++;
-	while (i < max_bits)
+	while (i <= max_bits)
 	{
-		while (j < size)
+		size_a = stack_a->len;
+		j = 0;
+		while (j < size_a)
 		{
-			if (((top >> i) & 1) == 1)
-			{
-				ra(stack_a);
-				operations++;
-			}
-			else
+			if (((top >> i) & 1) == 0)
 			{
 				pb(stack_a, stack_b);
 				operations++;
 			}
+			else
+			{
+				ra(stack_a);
+				operations++;
+			}
 			j++;
+		}
+		size_b = stack_b->len;
+		while (size_b > 0)
+		{
+			pa(stack_a, stack_b);
+			size_b--;
+			operations++;
 		}
 		i++;
 	}
-	while (stack_b->len > 0)
-	{
-		pa(stack_a, stack_b);
-		operations++;
-	}
 	return (operations);
 }
+
+
+
