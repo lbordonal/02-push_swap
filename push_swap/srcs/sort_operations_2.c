@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/15 18:25:53 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/20 00:41:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,13 @@ int	ft_sort(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	operations = 0;
 	ft_talisca(stack_a);
-	top = stack_a->finalpos[0];
 	size_a = stack_a->len;
 	max_num = size_a - 1;
 	max_bits = 0;
+	while (stack_a->finalpos[i] != 0)
+		i++;
+	top = stack_a->stack[i];
+	i = 0;
 	while ((max_num >> max_bits) != 0)
 		max_bits++;
 	while (i <= max_bits)
@@ -138,6 +141,10 @@ int	ft_sort(t_stack *stack_a, t_stack *stack_b)
 		}
 		i++;
 	}
+	ft_printf("\n%s\n", "[stack_a]");
+	ft_printstack(stack_a);
+	ft_printf("\n%s\n", "[stack_b]");
+	ft_printstack(stack_b);
 	return (operations);
 }
 
