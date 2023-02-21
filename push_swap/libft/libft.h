@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:34:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/13 10:34:13 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:14:45 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ typedef struct s_stack
 	int			*stack;
 	int			*finalpos;
 	int			len;
+	int			bottom;
+	int			top;
+	int			mid;
 }				t_stack;
 
 size_t	ft_strlen(const char *s);

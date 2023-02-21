@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/20 11:40:19 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:23:50 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,17 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	i;
 	int	j;
-	int	top;
 	int	size_a;
 	int	size_b;
-	int	max_num;
 	int	max_bits;
 
 	i = 0;
-	ft_talisca(stack_a);
+	find_top_mid_bottom(stack_a);
 	size_a = stack_a->len;
-	max_num = size_a - 1;
 	max_bits = 0;
-	while (stack_a->finalpos[i] != 0)
-		i++;
-	top = stack_a->stack[i];
+
 	i = 0;
-	while ((max_num >> max_bits) != 0)
+	while ((stack_a->bottom >> max_bits) != 0)
 		max_bits++;
 	while (i <= max_bits)
 	{
@@ -86,31 +81,20 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 		j = 0;
 		while (j < size_a)
 		{
-			if (((top >> i) & 1) == 0)
-			{
+			if (((stack_a->finalpos[0] >> i) & 1) == 0)
 				pb(stack_a, stack_b);
-				ft_talisca(stack_a);
-			}
 			else
-			{
 				ra(stack_a);
-				ft_talisca(stack_a);
-			}
 			j++;
 		}
 		size_b = stack_b->len;
 		while (size_b > 0)
 		{
 			pa(stack_a, stack_b);
-			ft_talisca(stack_a);
 			size_b--;
 		}
 		i++;
 	}
-	ft_printf("\n%s\n", "[stack_a]");
-	ft_printstack(stack_a);
-	ft_printf("\n%s\n", "[stack_b]");
-	ft_printstack(stack_b);
 }
 
 

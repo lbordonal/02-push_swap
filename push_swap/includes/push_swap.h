@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/20 11:40:17 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:14:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	ft_sort_five(t_stack *stack_a, t_stack *stack_b);
 void	ft_crazy_sort(t_stack *stack_a, t_stack *stack_b);
 /* sort_operations_2.c: */
 void	ft_talisca(t_stack *stack);
-void		ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
-void		ft_sort(t_stack *stack_a, t_stack *stack_b); // radix sort
+void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b);
+void	ft_sort(t_stack *stack_a, t_stack *stack_b); // radix sort
 /* sort_utils.c: */
-int		find_middle(t_stack *stack);
+void	find_top_mid_bottom(t_stack *stack);
 
 #endif
