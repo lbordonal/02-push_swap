@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/21 18:24:22 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/22 00:40:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	main(int ac, char **av)
 		stack_b.finalpos = malloc(sizeof(int) * stack_a.len);
 	}
 	ft_talisca(&stack_a);
-	/* ft_printf("%s\n", "[stack_a]");
+	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
 	ft_printf("\n%s\n", "------------------------------------------");
 	find_top_mid_bottom(&stack_a);
 	ft_printf("\n%s\n", "------------------------------------------");
- */	if (stack_a.len == 2)
+	if (stack_a.len == 2)
 		ft_sort_two(&stack_a);
 	else if (stack_a.len == 3)
 		ft_sort_three(&stack_a);
@@ -52,11 +52,8 @@ int	main(int ac, char **av)
 	else
 		//ft_crazy_sort(&stack_a, &stack_b);
 		ft_sort(&stack_a, &stack_b);
-/* 	ft_printf("\n%s\n", "[stack_a]");
+	ft_printf("\n%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
-	ft_printstack(&stack_b); */
-	//ft_printf("%s%d\n", "Middle index = ", find_middle(&stack_a));
-	//ft_sort_10(&stack_a, &stack_b);
-
+	ft_printstack(&stack_b);
 }

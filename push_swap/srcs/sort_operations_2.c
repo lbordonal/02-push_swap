@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/21 18:23:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/22 00:40:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,11 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 	int	i;
 	int	j;
 	int	size_a;
-	int	size_b;
 	int	max_bits;
 
 	i = 0;
-	find_top_mid_bottom(stack_a);
-	size_a = stack_a->len;
 	max_bits = 0;
-
-	i = 0;
+	find_top_mid_bottom(stack_a);
 	while ((stack_a->bottom >> max_bits) != 0)
 		max_bits++;
 	while (i <= max_bits)
@@ -87,15 +83,7 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 				ra(stack_a);
 			j++;
 		}
-		size_b = stack_b->len;
-		while (size_b > 0)
-		{
-			pa(stack_a, stack_b);
-			size_b--;
-		}
+		pushback_to_a(stack_a, stack_b);
 		i++;
 	}
 }
-
-
-

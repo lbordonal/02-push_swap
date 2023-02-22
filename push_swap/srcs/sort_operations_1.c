@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/21 17:47:43 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/22 00:40:46 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,26 +56,18 @@ void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 
 	a = stack_a->stack;
 	b = stack_b->stack;
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	ft_sort_two_reverse(stack_b);
-	ft_sort_three(stack_a);
+	double_pb_and_sort(stack_a, stack_b);
 	while (stack_b->len > 0)
 	{
 		if (b[0] < a[0])
-				pa(stack_a, stack_b);
+			pa(stack_a, stack_b);
 		else if (b[0] > a[0] && b[0] < a[1])
 		{
 			pa(stack_a, stack_b);
 			sa(stack_a);
 		}
 		else if (b[0] > a[0] && b[0] > a[1] && b[0] < a[2])
-		{
-			rra(stack_a);
-			pa(stack_a, stack_b);
-			ra(stack_a);
-			ra(stack_a);
-		}
+			rra_pa_ra_ra(stack_a, stack_b);
 		else if (b[0] > a[2])
 		{
 			pa(stack_a, stack_b);
