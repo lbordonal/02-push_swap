@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:16:53 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 14:40:09 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:29:13 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_talisca(stack_a);
+	fill_index(stack_a);
 	find_top_mid_bottom(stack_a);
 	if (stack_a->len == 2)
 		ft_sort_two(stack_a);
@@ -35,7 +35,6 @@ void	find_top_mid_bottom(t_stack *stack)
 
 	i = 0;
 	len = stack->len;
-	ft_talisca(stack);
 	while (stack->finalpos[i] != 0)
 		i++;
 	stack->top = stack->stack[i];

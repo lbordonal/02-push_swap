@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/22 00:40:46 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:44:40 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ void	ft_sort_three(t_stack *stack_a)
 	int	*s;
 
 	s = stack_a->stack;
-	if (s[0] < s[1] && s[1] < s[2] && s[2] > s[0])
-		ft_printf("%s\n", "Already sorted (:");
-	else if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] > s[0]))
+	if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] > s[0]))
 		sa(stack_a);
 	else if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] < s[0]))
 		ra(stack_a);
@@ -78,13 +76,13 @@ void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)
 
 void	ft_crazy_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_talisca(stack_a);
+	fill_index(stack_a);
 	while (stack_a->len > 1)
 	{
 		if (stack_a->finalpos[0] == 0)
 		{
 			pb(stack_a, stack_b);
-			ft_talisca(stack_a);
+			fill_index(stack_a);
 		}
 		else
 			ra(stack_a);

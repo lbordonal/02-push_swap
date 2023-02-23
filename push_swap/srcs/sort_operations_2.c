@@ -6,56 +6,31 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/22 18:40:19 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:28:11 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_talisca(t_stack *stack)
+void	fill_index(t_stack *stack)
 {
 	int	i;
 	int	j;
-	int	messi;
+	int	index;
 
 	i = 0;
 	while (i < stack->len)
 	{
 		j = 0;
-		messi = 0;
+		index = 0;
 		while (j < stack->len)
 		{
 			if (stack->stack[j] < stack->stack[i])
-				messi++;
+				index++;
 			j++;
 		}
-		stack->finalpos[i] = messi;
+		stack->finalpos[i] = index;
 		i++;
-	}
-}
-
-void	ft_marquinhos(t_stack *stack_a, t_stack *stack_b)
-{
-	int	bigger_index;
-	int	i;
-
-	bigger_index = stack_a->len - 1;
-	i = bigger_index + 1;
-	while (i > 0)
-	{
-		if (stack_a->finalpos[0] == bigger_index)
-		{
-			pb(stack_a, stack_b);
-			bigger_index--;
-		}
-		else if (stack_a->stack[0] < stack_a->stack[1])
-			ra(stack_a);
-		else if (stack_a->stack[0] > stack_a->stack[1])
-		{
-			sa(stack_a);
-			ra(stack_a);
-		}
-		i = stack_a->len;
 	}
 }
 
