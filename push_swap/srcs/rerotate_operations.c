@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:17:56 by lbordona          #+#    #+#             */
-/*   Updated: 2023/01/31 10:38:05 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:38:06 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void	rra(t_stack *stack_a)
 
 	len = stack_a->len - 1;
 	temp = stack_a->stack[len];
-	temppos = stack_a->finalpos[len];
+	temppos = stack_a->index[len];
 	while (len >= 0)
 	{
 		stack_a->stack[len] = stack_a->stack[len - 1];
-		stack_a->finalpos[len] = stack_a->finalpos[len - 1];
+		stack_a->index[len] = stack_a->index[len - 1];
 		len--;
 	}
 	stack_a->stack[0] = temp;
-	stack_a->finalpos[0] = temppos;
+	stack_a->index[0] = temppos;
 	ft_printf("%s\n", "rra");
 }
 
@@ -40,15 +40,15 @@ void	rrb(t_stack *stack_b)
 
 	len = stack_b->len - 1;
 	temp = stack_b->stack[len];
-	temppos = stack_b->finalpos[len];
+	temppos = stack_b->index[len];
 	while (len >= 0)
 	{
 		stack_b->stack[len] = stack_b->stack[len - 1];
-		stack_b->finalpos[len] = stack_b->finalpos[len - 1];
+		stack_b->index[len] = stack_b->index[len - 1];
 		len--;
 	}
 	stack_b->stack[0] = temp;
-	stack_b->finalpos[0] = temppos;
+	stack_b->index[0] = temppos;
 	ft_printf("%s\n", "rrb");
 }
 

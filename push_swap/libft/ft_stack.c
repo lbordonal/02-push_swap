@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 23:41:06 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/13 10:34:51 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:39:56 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_printstack(t_stack *stack_a)
 		ft_printf("%s\n", "-- stack empty --");
 	while (i < stack_a->len)
 	{
-		ft_printf("|%d|  |%d|\n", stack_a->stack[i], stack_a->finalpos[i]);
+		ft_printf("|%d|  |%d|\n", stack_a->stack[i], stack_a->index[i]);
 		i++;
 	}
 }

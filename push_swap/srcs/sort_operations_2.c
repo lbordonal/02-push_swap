@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 16:28:11 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:38:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	fill_index(t_stack *stack)
 				index++;
 			j++;
 		}
-		stack->finalpos[i] = index;
+		stack->index[i] = index;
 		i++;
 	}
 }
@@ -52,7 +52,7 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 		j = 0;
 		while (j < size_a)
 		{
-			if (((stack_a->finalpos[0] >> i) & 1) == 0)
+			if (((stack_a->index[0] >> i) & 1) == 0)
 				pb(stack_a, stack_b);
 			else
 				ra(stack_a);

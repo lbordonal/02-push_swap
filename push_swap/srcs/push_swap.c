@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 16:47:46 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:37:30 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ int	main(int ac, char **av)
 	}
 	if (ft_checkstack(&stack_a) != 1)
 	{
-		stack_a.finalpos = malloc(sizeof(int) * stack_a.len);
+		stack_a.index = malloc(sizeof(int) * stack_a.len);
 		stack_b.stack = malloc(sizeof(int) * stack_a.len);
-		stack_b.finalpos = malloc(sizeof(int) * stack_a.len);
+		stack_b.index = malloc(sizeof(int) * stack_a.len);
 	}
 	selection_sort(&stack_a, &stack_b);
 	free(stack_a.stack);
 	free(stack_b.stack);
-	free(stack_a.finalpos);
-	free(stack_b.finalpos);
+	free(stack_a.index);
+	free(stack_b.index);
 	return (0);
 }

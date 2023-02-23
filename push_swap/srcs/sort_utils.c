@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:16:53 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 16:29:13 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:39:06 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	find_top_mid_bottom(t_stack *stack)
 
 	i = 0;
 	len = stack->len;
-	while (stack->finalpos[i] != 0)
+	while (stack->index[i] != 0)
 		i++;
 	stack->top = stack->stack[i];
 	i = 0;
-	while (stack->finalpos[i] != (len - 1))
+	while (stack->index[i] != (len - 1))
 		i++;
 	stack->bottom = stack->stack[i];
 	if (len % 2 == 0)

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:34:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/21 18:14:45 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:37:18 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_list
 typedef struct s_stack
 {
 	int			*stack;
-	int			*finalpos;
+	int			*index;
 	int			len;
 	int			bottom;
 	int			top;

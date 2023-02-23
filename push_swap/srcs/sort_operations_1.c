@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 16:44:40 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:38:45 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_crazy_sort(t_stack *stack_a, t_stack *stack_b)
 	fill_index(stack_a);
 	while (stack_a->len > 1)
 	{
-		if (stack_a->finalpos[0] == 0)
+		if (stack_a->index[0] == 0)
 		{
 			pb(stack_a, stack_b);
 			fill_index(stack_a);
