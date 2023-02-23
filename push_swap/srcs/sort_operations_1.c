@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 18:38:45 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:12:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort_two(t_stack *stack_a)
 {
-	if (stack_a->stack[0] < stack_a->stack[1])
+	if (stack_a->stack[0] > stack_a->stack[1])
 		sa(stack_a);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 18:37:30 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:12:28 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	main(int ac, char **av)
 	t_stack	stack_b;
 
 	i = 0;
+	if (ac < 1)
+	{
+		ft_printf("%s\n", "Error");
+		return (0);
+	}
 	stack_a.stack = malloc(sizeof(int) * (ac - 1));
 	stack_a.len = (ac - 1);
 	stack_b.len = 0;
@@ -29,13 +34,13 @@ int	main(int ac, char **av)
 		stack_a.stack[i] = num;
 		i++;
 	}
-	if (ft_checkstack(&stack_a) != 1)
-	{
-		stack_a.index = malloc(sizeof(int) * stack_a.len);
-		stack_b.stack = malloc(sizeof(int) * stack_a.len);
-		stack_b.index = malloc(sizeof(int) * stack_a.len);
-	}
-	selection_sort(&stack_a, &stack_b);
+	stack_a.index = malloc(sizeof(int) * stack_a.len);
+	stack_b.stack = malloc(sizeof(int) * stack_a.len);
+	stack_b.index = malloc(sizeof(int) * stack_a.len);
+	if (detect_error(&stack_a) == 0)
+		selection_sort(&stack_a, &stack_b);
+	else
+		ft_printf("%s\n", "Error");
 	free(stack_a.stack);
 	free(stack_b.stack);
 	free(stack_a.index);
