@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 22:12:28 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:23:50 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ int	main(int ac, char **av)
 		ft_printf("%s\n", "Error");
 		return (0);
 	}
-	stack_a.stack = malloc(sizeof(int) * (ac - 1));
 	stack_a.len = (ac - 1);
+	stack_a.stack = malloc(sizeof(int) * (ac - 1));
+	stack_a.index = malloc(sizeof(int) * stack_a.len);
+	stack_b.stack = malloc(sizeof(int) * stack_a.len);
+	stack_b.index = malloc(sizeof(int) * stack_a.len);
 	stack_b.len = 0;
 	while (i < stack_a.len)
 	{
@@ -34,9 +37,6 @@ int	main(int ac, char **av)
 		stack_a.stack[i] = num;
 		i++;
 	}
-	stack_a.index = malloc(sizeof(int) * stack_a.len);
-	stack_b.stack = malloc(sizeof(int) * stack_a.len);
-	stack_b.index = malloc(sizeof(int) * stack_a.len);
 	if (detect_error(&stack_a) == 0)
 		selection_sort(&stack_a, &stack_b);
 	else

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:07:04 by lbordona          #+#    #+#             */
-/*   Updated: 2022/11/03 10:41:01 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:23:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ int	ft_isdigit(int c)
 		return (1);
 	else
 		return (0);
+}
+
+int	ft_isdigitorsignal(char c)
+{
+	if ((c >= '0' && c <= '9') || (c == '-' || c == '+') || c == ' ')
+		return (1);
+	return (0);
 }
 
 /* int	main(void)

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 22:12:17 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:25:15 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 		ft_sort_five(stack_a, stack_b);
 	else if (stack_a->len == 10)
 		ft_crazy_sort(stack_a, stack_b);
-	else if (stack_a->len > 10)
+	else
 		ft_sort(stack_a, stack_b);
 }
 
