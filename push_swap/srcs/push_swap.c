@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 17:38:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:23:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int ac, char **av)
 	ft_printstack(&stack_b);
 	ft_printf("\n%s\n", "------------------------------------------"); */
 	if (ac <= 1)
-		error_handler(2);
+		return (0);
 	else if (ft_is_duplicated(&stack_a) == 0)
 	{
 		if (stack_sorted(&stack_a) == 0)
