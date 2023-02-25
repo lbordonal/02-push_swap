@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 00:26:13 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 17:08:13 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:38:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,26 @@ void	ft_sort_three(t_stack *stack_a)
 	int	*s;
 
 	s = stack_a->stack;
-	if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] > s[0]))
-		sa(stack_a);
-	else if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] < s[0]))
-		ra(stack_a);
-	else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
-		rra(stack_a);
-	else if ((s[0] > s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
+	if (stack_sorted(stack_a) == 0)
 	{
-		sa(stack_a);
-		rra(stack_a);
+		if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] > s[0]))
+			sa(stack_a);
+		else if ((s[0] > s[1]) && (s[1] < s[2]) && (s[2] < s[0]))
+			ra(stack_a);
+		else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
+			rra(stack_a);
+		else if ((s[0] > s[1]) && (s[1] > s[2]) && (s[2] < s[0]))
+		{
+			sa(stack_a);
+			rra(stack_a);
+		}
+		else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] > s[0]))
+		{
+			sa(stack_a);
+			ra(stack_a);
+		}
 	}
-	else if ((s[0] < s[1]) && (s[1] > s[2]) && (s[2] > s[0]))
-	{
-		sa(stack_a);
-		ra(stack_a);
-	}
+	return ;
 }
 
 void	ft_sort_five(t_stack *stack_a, t_stack *stack_b)

@@ -6,11 +6,33 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:16:53 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 17:08:17 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:38:52 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	selection_sort(t_stack *stack_a, t_stack *stack_b)
+{
+	fill_index(stack_a);
+	find_top_mid_bottom(stack_a);
+	if (stack_sorted(stack_a) == 0)
+	{
+		if (stack_a->len == 1)
+			return ;
+		else if (stack_a->len == 2)
+			ft_sort_two(stack_a);
+		else if (stack_a->len == 3)
+			ft_sort_three(stack_a);
+		else if (stack_a->len == 5)
+			ft_sort_five(stack_a, stack_b);
+		else if (stack_a->len == 10)
+			ft_crazy_sort(stack_a, stack_b);
+		else
+			ft_sort(stack_a, stack_b);
+	}
+	return ;
+}
 
 void	find_top_mid_bottom(t_stack *stack)
 {

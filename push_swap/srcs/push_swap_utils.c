@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:32:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 16:54:16 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:38:56 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	error_handler(int option)
 	if (option == 1)
 	{
 		ft_printf("%s\n", "Error");
-		exit (0) ;
+		exit (0);
 	}
 	else if (option == 2)
 	{

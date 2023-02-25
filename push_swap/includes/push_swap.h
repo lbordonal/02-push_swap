@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 16:52:53 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:38:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ void	find_top_mid_bottom(t_stack *stack);
 void	pushback_to_a(t_stack *stack_a, t_stack *stack_b);
 void	double_pb_and_sort(t_stack *stack_a, t_stack *stack_b);
 void	rra_pa_ra_ra(t_stack *stack_a, t_stack *stack_b);
-
 
 #endif
