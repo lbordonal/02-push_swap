@@ -1,15 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_mgmt.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 20:05:10 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 16:05:20 by lbordona         ###   ########.fr       */
+/*   Created: 2023/02/25 15:50:33 by lbordona          #+#    #+#             */
+/*   Updated: 2023/02/25 15:52:47 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
+int	ft_str_is_digit(char *str)
+{
+	int	i;
 
+	i = 0;
+	if (str[i] == 43 || str[i] == 45)
+		i++;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 48 || str[i] > 57)
+			return (0);
+		i++;
+	}
+	if ((str[0] == 43 || str[0] == 45) && i == 1)
+		return (0);
+	return (1);
+}

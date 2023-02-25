@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/24 09:23:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:53:42 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ int	main(int ac, char **av)
 	t_stack	stack_b;
 
 	i = 0;
-	if (ac < 1)
-	{
-		ft_printf("%s\n", "Error");
-		return (0);
-	}
 	stack_a.len = (ac - 1);
 	stack_a.stack = malloc(sizeof(int) * (ac - 1));
 	stack_a.index = malloc(sizeof(int) * stack_a.len);
@@ -33,17 +28,24 @@ int	main(int ac, char **av)
 	stack_b.len = 0;
 	while (i < stack_a.len)
 	{
-		num = ft_atoi(av[i + 1]);
-		stack_a.stack[i] = num;
-		i++;
+		if (ft_str_is_digit(av[i + 1]) == 1 && ft_value_limits(ft_atol(av[i + 1])) == 0)
+		{
+			num = ft_atol(av[i + 1]);
+			stack_a.stack[i] = num;
+			i++;
+		}
+		else
+			error_handler(1);
 	}
-	if (detect_error(&stack_a) == 0)
-		selection_sort(&stack_a, &stack_b);
+	if (ac <= 1)
+		error_handler(2);
+	else if (ft_is_duplicated(&stack_a) == 0)
+	{
+		if (stack_sorted(&stack_a) == 0)
+			selection_sort(&stack_a, &stack_b);
+	}
 	else
 		ft_printf("%s\n", "Error");
-	free(stack_a.stack);
-	free(stack_b.stack);
-	free(stack_a.index);
-	free(stack_b.index);
+	free_all(&stack_a, &stack_b);
 	return (0);
 }

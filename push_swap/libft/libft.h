@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:34:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/24 09:14:39 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/02/25 15:50:50 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ int		ft_ptrlen(uintptr_t ptr);
 int		ft_putpercent(void);
 int		ft_isstringdigit(char *string);
 int		ft_checkstack(t_stack *stack);
+int		ft_str_is_digit(char *str);
+
+long	ft_atol(const char *str);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
