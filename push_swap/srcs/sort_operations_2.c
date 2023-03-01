@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/01 14:10:25 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:23:13 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 				ra(stack_a);
 			j++;
 		}
-		//pushback_to_a(stack_a, stack_b);
-		pushback_to_a_but_smart(stack_a, stack_b, i);
+		pushback_to_a(stack_a, stack_b);
+		//pushback_to_a_but_smart(stack_a, stack_b, i);
 		i++;
 	}
 }
 
-void	pushback_to_a_but_smart(t_stack *stack_a, t_stack *stack_b, int	shift)
+/* void	pushback_to_a_but_smart(t_stack *stack_a, t_stack *stack_b, int	shift)
 {
 	int	i;
 	int	size_b;
@@ -80,4 +80,4 @@ void	pushback_to_a_but_smart(t_stack *stack_a, t_stack *stack_b, int	shift)
 			pa(stack_a, stack_b);
 		i++;
 	}
-}
+} */
