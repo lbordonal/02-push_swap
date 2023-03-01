@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 18:23:39 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:06:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int	main(int ac, char **av)
 		else
 			error_handler(1);
 	}
-	/* ft_printf("%s\n", "[stack_a]");
+	ft_printf("%s\n", "[stack_a]");
 	ft_printstack(&stack_a);
 	ft_printf("\n%s\n", "[stack_b]");
 	ft_printstack(&stack_b);
-	ft_printf("\n%s\n", "------------------------------------------"); */
+	ft_printf("\n%s\n", "------------------------------------------");
 	if (ac <= 1)
 		return (0);
 	else if (ft_is_duplicated(&stack_a) == 0)
@@ -49,11 +49,11 @@ int	main(int ac, char **av)
 		if (stack_sorted(&stack_a) == 0)
 		{
 			selection_sort(&stack_a, &stack_b);
-			/* ft_printf("%s\n", "[stack_a]");
+			ft_printf("%s\n", "[stack_a]");
 			ft_printstack(&stack_a);
 			ft_printf("\n%s\n", "[stack_b]");
 			ft_printstack(&stack_b);
-			ft_printf("\n%s\n", "------------------------------------------"); */
+			ft_printf("\n%s\n", "------------------------------------------");
 		}
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:13:36 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/25 18:16:23 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:10:25 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,25 +58,26 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b)
 				ra(stack_a);
 			j++;
 		}
-		pushback_to_a(stack_a, stack_b);
-		//pushback_to_a_but_smart(stack_a, stack_b, i);
+		//pushback_to_a(stack_a, stack_b);
+		pushback_to_a_but_smart(stack_a, stack_b, i);
 		i++;
 	}
 }
-/*
+
 void	pushback_to_a_but_smart(t_stack *stack_a, t_stack *stack_b, int	shift)
 {
 	int	i;
 	int	size_b;
 
 	i = 0;
+	fill_index(stack_b);
 	size_b = stack_b->len;
 	while (i < size_b && stack_b->len > 0)
 	{
-		if (((stack_b->stack[0] >> (shift + 1)) & 1) == 1)
+		if (((stack_b->index[0] & (1 << (shift + 1))) == 0))
 			rb(stack_b);
 		else
 			pa(stack_a, stack_b);
 		i++;
 	}
-} */
+}

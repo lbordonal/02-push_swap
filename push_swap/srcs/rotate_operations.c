@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:26:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 18:38:16 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:11:32 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ra(t_stack *stack_a)
 	int	i;
 	int	len;
 	int	temp;
-	int	temppos;
+	int	temp_index;
 
 	i = 0;
 	len = stack_a->len - 1;
 	temp = stack_a->stack[0];
-	temppos = stack_a->index[0];
+	temp_index = stack_a->index[0];
 	while (i < stack_a->len)
 	{
 		stack_a->stack[i] = stack_a->stack[i + 1];
@@ -30,7 +30,7 @@ void	ra(t_stack *stack_a)
 		i++;
 	}
 	stack_a->stack[len] = temp;
-	stack_a->index[len] = temppos;
+	stack_a->index[len] = temp_index;
 	ft_printf("%s\n", "ra");
 }
 
@@ -39,12 +39,12 @@ void	rb(t_stack *stack_b)
 	int	i;
 	int	len;
 	int	temp;
-	int	temppos;
+	int	temp_index;
 
 	i = 0;
 	len = stack_b->len - 1;
 	temp = stack_b->stack[0];
-	temppos = stack_b->index[0];
+	temp_index = stack_b->index[0];
 	while (i < stack_b->len)
 	{
 		stack_b->stack[i] = stack_b->stack[i + 1];
@@ -52,7 +52,7 @@ void	rb(t_stack *stack_b)
 		i++;
 	}
 	stack_b->stack[len] = temp;
-	stack_b->index[len] = temppos;
+	stack_b->index[len] = temp_index;
 	ft_printf("%s\n", "rb");
 }
 
