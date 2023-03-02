@@ -24,7 +24,7 @@ void	selection_sort(t_stack *stack_a, t_stack *stack_b)
 			ft_sort_two(stack_a);
 		else if (stack_a->len == 3)
 			ft_sort_three(stack_a);
-		else if (stack_a->len <= 5)
+		else if (stack_a->len == 5)
 			ft_sort_five(stack_a, stack_b);
 		else if (stack_a->len == 10)
 			ft_crazy_sort(stack_a, stack_b);
