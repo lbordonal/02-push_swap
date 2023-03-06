@@ -14,7 +14,8 @@
 This repository contains code developed at 42 Porto for push_swap Project, from 03/01/2023 to ...
 </p>
 
-<h2 align="left">
+<img src="https://github.com/lbordonal/lbordonal/blob/main/.42_badges/push_swape.png" align="right" />
+<h2>
 	 :notebook: Subject
 </h2>
 <a href="https://github.com/lbordonal/02-push_swap/blob/main/Subject/en.subject.pdf">Click here</a> for the subject of this project.
