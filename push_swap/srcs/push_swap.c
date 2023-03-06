@@ -6,37 +6,56 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/06 16:00:46 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/06 18:47:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+t_stack	ft_start_stack(int len)
+{
+	t_stack	stack;
+
+	stack.len = len;
+	stack.stack = malloc(sizeof(int) * len);
+	if (stack.stack == NULL)
+		return (stack);
+	stack.index = malloc(sizeof(int) * len);
+	return (stack);
+}
+
+void	fill_stack(int argc, char **argv, t_stack *stack_a)
 {
 	int		i;
-	int		num;
-	t_stack	stack_a;
-	t_stack	stack_b;
+	long	num;
 
+	(void)argc;
 	i = 0;
-	stack_a.len = (ac - 1);
-	stack_a.stack = malloc(sizeof(int) * (ac - 1));
-	stack_a.index = malloc(sizeof(int) * stack_a.len);
-	stack_b.stack = malloc(sizeof(int) * stack_a.len);
-	stack_b.index = malloc(sizeof(int) * stack_a.len);
-	stack_b.len = 0;
-	while (i < stack_a.len)
+	while (i < stack_a->len)
 	{
-		if (ft_str_is_digit(av[i + 1]) && !ft_value_limits(ft_atol(av[i + 1])))
+		num = ft_atol(argv[i + 1]);
+		if (ft_str_is_digit(argv[i + 1]) && !ft_value_limits(num))
 		{
-			num = ft_atol(av[i + 1]);
-			stack_a.stack[i] = num;
+			stack_a->stack[i] = num;
 			i++;
 		}
 		else
-			error_handler(1);
+		{
+			free(stack_a->stack);
+			return ;
+		}
 	}
+}
+
+int	main(int ac, char **av)
+{
+	t_stack	stack_a;
+	t_stack	stack_b;
+
+	stack_a = ft_start_stack(ac - 1);
+	stack_b = ft_start_stack(ac - 1);
+	stack_b.len = 0;
+	fill_stack(ac, av, &stack_a);
 	if (ac <= 1)
 		return (0);
 	else if (ft_is_duplicated(&stack_a) == 0)
