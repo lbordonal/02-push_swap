@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/08 18:55:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:56:43 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,5 @@ int	main(int ac, char **av)
 			ft_printf("%s\n", "Error");
 	}
 	free_all(&stack_a, &stack_b);
-	//free(stack_a.stack);
-	//free(stack_b.stack);
-	//free(stack_a.index);
-	//free(stack_b.index);
 	return (0);
 }
