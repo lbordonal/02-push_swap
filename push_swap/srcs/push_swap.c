@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/08 18:31:23 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:55:33 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	ft_start_stack(int len)
 	stack.stack = malloc(sizeof(int) * len);
 	if (stack.stack == NULL)
 		return (stack);
-	stack.index = malloc(sizeof(int) * len);
+	stack.index = malloc(sizeof(int) * stack.len);
 	return (stack);
 }
 
