@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 15:28:30 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:31:08 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 
 	stack_a = ft_start_stack(ac - 1);
 	stack_b = ft_start_stack(ac - 1);
-	//stack_b.len = 0;
+	stack_b.len = 0;
 	fill_stack(ac, av, &stack_a);
 	if (ac <= 1 || stack_sorted(&stack_a))
 		return (0);
