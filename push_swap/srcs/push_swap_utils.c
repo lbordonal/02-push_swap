@@ -6,13 +6,13 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:32:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/06 15:58:19 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:45:21 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_all(t_stack *stack_a , t_stack *stack_b)
+void	free_all(t_stack *stack_a, t_stack *stack_b)
 {
 	free(stack_a->stack);
 	free(stack_b->stack);
