@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:53:30 by lbordona          #+#    #+#             */
-/*   Updated: 2023/02/23 18:37:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:13:01 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	stack_a->stack[i] = stack_b->stack[i];
 	stack_a->index[i] = stack_b->index[i];
-	while (i <= stack_b->len)
+	while (i < stack_b->len - 1)
 	{
 		stack_b->stack[i] = stack_b->stack[i + 1];
 		stack_b->index[i] = stack_b->index[i + 1];
@@ -46,6 +46,8 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 
 	i = stack_b->len;
 	stack_b->len++;
+	if (stack_a->len <= 0)
+		return ;
 	if (stack_b->len > 1)
 	{
 		while (i > 0)
@@ -58,7 +60,7 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	stack_b->stack[i] = stack_a->stack[i];
 	stack_b->index[i] = stack_a->index[i];
-	while (i <= stack_a->len)
+	while (i < stack_a->len - 1)
 	{
 		stack_a->stack[i] = stack_a->stack[i + 1];
 		stack_a->index[i] = stack_a->index[i + 1];

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 15:31:08 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:51:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ t_stack	ft_start_stack(int len)
 	t_stack	stack;
 
 	stack.len = len;
-	stack.stack = malloc(sizeof(int) * len);
+	stack.stack = ft_calloc(len, sizeof(int));
+	//stack.stack = malloc(sizeof(int) * len);
 	if (stack.stack == NULL)
 		return (stack);
-	stack.index = malloc(sizeof(int) * stack.len);
+	stack.index = ft_calloc(len, sizeof(int));
+	//stack.index = malloc(sizeof(int) * stack.len);
+	stack.bottom = 0;
+	stack.top = 0;
+	stack.mid = 0;
 	return (stack);
 }
 
@@ -52,9 +57,12 @@ int	main(int ac, char **av)
 	t_stack	stack_a;
 	t_stack	stack_b;
 
+	//stack_a = malloc(sizeof(t_stack));
+	//stack_b = malloc(sizeof(t_stack));
+
+
 	stack_a = ft_start_stack(ac - 1);
 	stack_b = ft_start_stack(ac - 1);
-	stack_b.len = 0;
 	fill_stack(ac, av, &stack_a);
 	if (ac <= 1 || stack_sorted(&stack_a))
 		return (0);
