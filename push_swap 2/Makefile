@@ -1,0 +1,41 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/04 17:25:18 by lbordona          #+#    #+#              #
+#    Updated: 2023/03/21 20:09:49 by lbordona         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC = cc -g
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
+
+LIBFT = ./libft/libft.a
+
+NAME = push_swap
+
+SRCS = srcs/push_swap.c
+
+OBJS = $(SRCS:%.c=%.o)
+
+#Rules:
+all: $(NAME)
+$(LIBFT):
+	@$(MAKE) -C ./libft
+
+$(NAME): $(OBJS) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o push_swap
+
+clean:
+	@$(MAKE) clean -C ./libft
+	@$(RM) $(OBJS)
+
+fclean: clean
+	@$(MAKE) fclean -C ./libft
+	@$(RM) $(NAME)
+
+re: fclean all
