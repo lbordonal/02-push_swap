@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 14:45:17 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:28:30 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,17 @@ int	main(int ac, char **av)
 
 	stack_a = ft_start_stack(ac - 1);
 	stack_b = ft_start_stack(ac - 1);
-	stack_b.len = 0;
+	//stack_b.len = 0;
 	fill_stack(ac, av, &stack_a);
-	if (ac <= 1)
-		return (0);
-	else if (stack_sorted(&stack_a) == 1)
+	if (ac <= 1 || stack_sorted(&stack_a))
 		return (0);
 	else if (ft_is_duplicated(&stack_a) == 0)
-		selection_sort(&stack_a, &stack_b);
-	else
-		ft_printf("%s\n", "Error - 5");
+	{
+		if (stack_sorted(&stack_a) == 0)
+			selection_sort(&stack_a, &stack_b);
+		else
+			ft_printf("%s\n", "Error");
+	}
 	free_all(&stack_a, &stack_b);
 	return (0);
 }
