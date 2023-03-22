@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 17:25:18 by lbordona          #+#    #+#              #
-#    Updated: 2023/03/21 20:09:49 by lbordona         ###   ########.fr        #
+#    Updated: 2023/03/21 23:32:46 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,11 @@ LIBFT = ./libft/libft.a
 
 NAME = push_swap
 
-SRCS = srcs/push_swap.c
+SRCS = srcs/push_swap.c \
+	srcs/utils.c \
+	srcs/operation_swap.c \
+	srcs/operation_rotate.c \
+	srcs/operation_push.c
 
 OBJS = $(SRCS:%.c=%.o)
 

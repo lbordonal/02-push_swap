@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 20:09:53 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/21 23:32:40 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,25 @@
 
 /* push_swap.c: */
 void	ft_start_stacks(t_stack	*stack, int len);
+void	ft_fill_stack(int argc, char **argv, t_stack *stack);
 
-/* push_swap_utils.c: */
+/* utils.c: */
+int		ft_value_limits(long int num);
 
-/* swap_operations.c: */
+/* operation_swap.c: */
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
 
-/* push_operations.c: */
+/* operation_rotate.c: */
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
 
-/* rotate_operations.c: */
-
-/* rerotate_operations.c: */
+/* operation_push.c: */
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
+/* operation_rerotate.c: */
 
 /* sort_operations.c: */
 

@@ -1,64 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_operations.c                                :+:      :+:    :+:   */
+/*   operation_rotate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 16:26:19 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 23:16:03 by lbordona         ###   ########.fr       */
+/*   Created: 2023/03/21 23:04:48 by lbordona          #+#    #+#             */
+/*   Updated: 2023/03/21 23:25:41 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ra(t_stack *stack_a)
+void	ra(t_stack *stack)
 {
 	int	i;
 	int	len;
 	int	temp;
-	int	temp_index;
 
 	i = 0;
-	len = stack_a->len - 1;
-	temp = stack_a->stack[0];
-	temp_index = stack_a->index[0];
+	len = stack->len_a - 1;
+	temp = stack->stack_a[0];
 	while (i < len)
 	{
-		stack_a->stack[i] = stack_a->stack[i + 1];
-		stack_a->index[i] = stack_a->index[i + 1];
+		stack->stack_a[i] = stack->stack_a[i + 1];
 		i++;
 	}
-	stack_a->stack[len] = temp;
-	stack_a->index[len] = temp_index;
+	stack->stack_a[len] = temp;
 	ft_printf("%s\n", "ra");
 }
 
-void	rb(t_stack *stack_b)
+void	rb(t_stack *stack)
 {
 	int	i;
 	int	len;
 	int	temp;
-	int	temp_index;
 
 	i = 0;
-	len = stack_b->len - 1;
-	temp = stack_b->stack[0];
-	temp_index = stack_b->index[0];
+	len = stack->len_b - 1;
+	temp = stack->stack_b[0];
 	while (i < len)
 	{
-		stack_b->stack[i] = stack_b->stack[i + 1];
-		stack_b->index[i] = stack_b->index[i + 1];
+		stack->stack_b[i] = stack->stack_b[i + 1];
 		i++;
 	}
-	stack_b->stack[len] = temp;
-	stack_b->index[len] = temp_index;
+	stack->stack_b[len] = temp;
 	ft_printf("%s\n", "rb");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stack *stack)
 {
-	ra(stack_a);
-	rb(stack_b);
+	ra(stack);
+	rb(stack);
 	ft_printf("%s\n", "rr");
 }
