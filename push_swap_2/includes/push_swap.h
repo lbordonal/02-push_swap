@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 14:31:04 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:56:57 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,13 @@ void	ft_sort_five(t_stack *stack);
 
 /* sort_big.c: */
 void	ft_crazy_sort(t_stack *stack);
+void	ft_sort(t_stack *stack);
 
 /* sort_utils.c: */
 void	double_pb_and_sort(t_stack *stack);
 void	rra_pa_ra_ra(t_stack *stack);
 void	ft_transform(t_stack *stack, int *temp_stack);
 void	fill_index(t_stack *stack);
+void	find_top_bottom(t_stack *stack);
 
 #endif

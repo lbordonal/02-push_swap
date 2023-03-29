@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:56:16 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 14:31:43 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:41:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,19 @@ void	fill_index(t_stack *stack)
 	free(temp_stack);
 }
 
+void	find_top_bottom(t_stack *stack)
+{
+	int	i;
+	int	len;
 
+	i = 0;
+	len = stack->len_a - 1;
+	fill_index(stack);
+	while (stack->stack_a[i] != 0)
+		i++;
+	stack->top = stack->stack_a[i];
+	i = 0;
+	while (stack->stack_a[i] != len)
+		i++;
+	stack->bottom = stack->stack_a[i];
+}

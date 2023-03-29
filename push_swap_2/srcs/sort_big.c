@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:21:41 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 14:26:52 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:52:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,34 @@ void	ft_crazy_sort(t_stack *stack)
 	}
 	while (stack->len_b > 0)
 		pa(stack);
+}
+
+void	ft_sort(t_stack *stack)
+{
+	int	i;
+	int	j;
+	int	size_a;
+	int	max_bits;
+
+	i = 0;
+	max_bits = 0;
+	while ((stack->bottom >> max_bits) != 0)
+		max_bits++;
+	while (i <= max_bits)
+	{
+		size_a = stack->len_a;
+		j = 0;
+		while (j < size_a)
+		{
+			if (((stack->stack_a[0] >> i) & 1) == 0)
+				pb(stack);
+			else
+				ra(stack);
+			j++;
+		}
+		//pushback_to_a(stack_a, stack_b);
+		while (stack->len_b > 0)
+			pa(stack);
+		i++;
+	}
 }
