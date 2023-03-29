@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 22:10:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 12:50:05 by lbordona         ###   ########.fr       */
+/*   Created: 2023/03/29 14:21:41 by lbordona          #+#    #+#             */
+/*   Updated: 2023/03/29 14:26:52 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_value_limits(long int num)
+void	ft_crazy_sort(t_stack *stack)
 {
-	if (num > INT_MAX || num < INT_MIN)
-		return (1);
-	return (0);
-}
-
-int	stack_sorted(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->len_a - 1)
+	fill_index(stack);
+	while (stack->len_a >= 1)
 	{
-		if (stack->stack_a[i] > stack->stack_a[i + 1])
-			return (0);
+		if (stack->stack_a[0] == 0)
+		{
+			pb(stack);
+			fill_index(stack);
+		}
 		else
-			i++;
+			ra(stack);
 	}
-	return (1);
+	while (stack->len_b > 0)
+		pa(stack);
 }
