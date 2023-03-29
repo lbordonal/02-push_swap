@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sort_utils_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 22:10:50 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 18:12:01 by lbordona         ###   ########.fr       */
+/*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
+/*   Updated: 2023/03/29 18:30:55 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_value_limits(long int num)
+void	pushback_to_a(t_stack *stack)
 {
-	if (num > INT_MAX || num < INT_MIN)
-		return (1);
-	return (0);
+	while (stack->len_b > 0)
+		pa(stack);
 }
 
-int	stack_sorted_a(t_stack *stack)
+void	pushback_to_a_smarter(t_stack *stack, int pos)
 {
 	int	i;
+	int	size_b;
 
-	i = 0;
-	while (i < stack->len_a - 1)
+	if ((stack_sorted_a(stack)) && (stack_sorted_b(stack)))
 	{
-		if (stack->stack_a[i] > stack->stack_a[i + 1])
-			return (0);
-		else
-			i++;
+		while (stack->len_b > 0)
+			pa(stack);
+		return ;
 	}
-	return (1);
-}
-
-int	stack_sorted_b(t_stack *stack)
-{
-	int	i;
-
+	size_b = stack->len_b;
 	i = 0;
-	while (i < stack->len_b - 1)
+	while (i < size_b && stack->len_b)
 	{
-		if (stack->stack_b[i] > stack->stack_b[i + 1])
-			return (0);
+		if (((stack->stack_b[0] >> (pos + 1)) & 1) == 0)
+			rb(stack);
 		else
-			i++;
+			pa(stack);
+		i++;
 	}
-	return (1);
 }

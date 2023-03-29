@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 17:25:18 by lbordona          #+#    #+#              #
-#    Updated: 2023/03/29 14:22:09 by lbordona         ###   ########.fr        #
+#    Updated: 2023/03/29 18:00:22 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS = srcs/push_swap.c \
 	srcs/operation_rotate.c \
 	srcs/operation_push.c \
 	srcs/operation_rerotate.c \
-	srcs/sort_utils.c \
+	srcs/sort_utils_1.c \
+	srcs/sort_utils_2.c \
 	srcs/sort_small.c \
 	srcs/sort_big.c
 

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort_utils_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:56:16 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 16:41:10 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:13:06 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	double_pb_and_sort(t_stack *stack) //just to short the lines
+void	double_pb_and_sort(t_stack *stack)
 {
 	pb(stack);
 	pb(stack);
 	ft_sort_two_b(stack);
-	if (stack_sorted(stack) == 0)
+	if (stack_sorted_a(stack) == 0)
 		ft_sort_three(stack);
 }
 
-void	rra_pa_ra_ra(t_stack *stack) //just to short the lines
+void	rra_pa_ra_ra(t_stack *stack)
 {
 	rra(stack);
 	pa(stack);
@@ -54,28 +54,28 @@ void	ft_transform(t_stack *stack, int *temp)
 void	fill_index(t_stack *stack)
 {
 	int	i;
-	int	*temp_stack;
+	int	*aux;
 	int	temp;
 
 	i = 0;
-	temp_stack = ft_calloc(stack->len_a, sizeof(int));
-	if (!temp_stack)
+	aux = ft_calloc(stack->len_a, sizeof(int));
+	if (!aux)
 		return ;
-	temp_stack = ft_memcpy(temp_stack, stack->stack_a, sizeof(int) * stack->len_a);
+	aux = ft_memcpy(aux, stack->stack_a, sizeof(int) * stack->len_a);
 	while (i < stack->len_a - 1)
 	{
-		if (temp_stack[i] > temp_stack[i + 1])
+		if (aux[i] > aux[i + 1])
 		{
-			temp = temp_stack[i];
-			temp_stack[i] = temp_stack[i + 1];
-			temp_stack[i + 1] = temp;
+			temp = aux[i];
+			aux[i] = aux[i + 1];
+			aux[i + 1] = temp;
 			i = 0;
 		}
 		else
 			i++;
 	}
-	ft_transform(stack, temp_stack);
-	free(temp_stack);
+	ft_transform(stack, aux);
+	free(aux);
 }
 
 void	find_top_bottom(t_stack *stack)
