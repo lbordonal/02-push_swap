@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 18:12:19 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:27:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	selection_sort(t_stack *stack);
 
 /* utils.c: */
 int		ft_value_limits(long int num);
+int		ft_is_duplicated(t_stack *stack);
 int		stack_sorted_a(t_stack *stack);
 int		stack_sorted_b(t_stack *stack);
 
