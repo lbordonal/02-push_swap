@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 18:30:55 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:06:25 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	pushback_to_a(t_stack *stack)
 		pa(stack);
 }
 
+/* ---not working--- */
 void	pushback_to_a_smarter(t_stack *stack, int pos)
 {
 	int	i;

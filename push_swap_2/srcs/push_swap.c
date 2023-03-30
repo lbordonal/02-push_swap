@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/30 20:32:13 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:05:15 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void	selection_sort(t_stack *stack)
 		ft_sort_three(stack);
 	else if (stack->len_a <= 5)
 		ft_sort_five(stack);
-	else if (stack->len_a <= 10)
+	else if (stack->len_a <= 25)
 		ft_crazy_sort(stack);
-	else if (stack->len_a > 10)
+	else if (stack->len_a > 25)
 		ft_sort(stack);
 	return ;
 }
