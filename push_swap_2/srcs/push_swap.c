@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/30 13:44:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:32:13 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void	ft_fill_stack(int argc, char **argv, t_stack *stack)
 	stack->len_a = argc - 1;
 	while (i < stack->len_a)
 	{
-		number = ft_atol(argv[i + 1]);
-		ft_printf("%d", number); //erro do INT_MAX e INT_MIN
 		if (ft_str_is_digit(argv[i + 1]))
 		{
+			number = ft_atol(argv[i + 1]);
+			if (number < -2147483648 || number > 2147483647)
+				return ;
 			stack->stack_a[i] = number;
 			i++;
 		}
