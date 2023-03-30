@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/30 12:29:21 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:44:57 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_fill_stack(int argc, char **argv, t_stack *stack)
 	while (i < stack->len_a)
 	{
 		number = ft_atol(argv[i + 1]);
-		if (ft_str_is_digit(argv[i + 1]) && !ft_value_limits(number))
+		ft_printf("%d", number); //erro do INT_MAX e INT_MIN
+		if (ft_str_is_digit(argv[i + 1]))
 		{
 			stack->stack_a[i] = number;
 			i++;
@@ -43,6 +44,16 @@ void	ft_fill_stack(int argc, char **argv, t_stack *stack)
 			return ;
 		}
 	}
+}
+
+void	check_errors_in_stack(t_stack *stack)
+{
+	if (duplicated_element(stack) || out_of_limits(stack))
+	{
+		ft_printf("%s\n", "Error");
+		exit (0);
+	}
+	return ;
 }
 
 void	selection_sort(t_stack *stack)
@@ -68,19 +79,15 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack;
 
-	(void)av;
+	ft_is_all_digits(ac, av);
 	stack = malloc(sizeof(t_stack));
 	ft_start_stacks(stack, (ac - 1));
 	ft_fill_stack(ac, av, stack);
+	check_errors_in_stack(stack);
 	if (ac <= 1 || stack_sorted_a(stack))
 		return (0);
-	else if (ft_is_duplicated(stack) == 0)
-	{
-		if (stack_sorted_a(stack) == 0)
-			selection_sort(stack);
-		else
-			ft_printf("%s\n", "Error");
-	}
+	else
+		selection_sort(stack);
 	free(stack->stack_a);
 	free(stack->stack_b);
 	free(stack);

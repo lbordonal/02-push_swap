@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/30 12:27:54 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:39:54 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+# include <limits.h>
 
 /* push_swap.c: */
 void	ft_start_stacks(t_stack *stack, int len);
 void	ft_fill_stack(int argc, char **argv, t_stack *stack);
+void	check_errors_in_stack(t_stack *stack);
 void	selection_sort(t_stack *stack);
 
 /* utils.c: */
-int		ft_value_limits(long int num);
-int		ft_is_duplicated(t_stack *stack);
+void	ft_is_all_digits(int ac, char **av);
+int		out_of_limits(t_stack *stack);
+int		duplicated_element(t_stack *stack);
 int		stack_sorted_a(t_stack *stack);
 int		stack_sorted_b(t_stack *stack);
 
