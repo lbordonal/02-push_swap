@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/31 10:49:08 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/04 15:50:33 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_fill_stack(int argc, char **argv, t_stack *stack)
 		if (ft_str_is_digit(argv[i + 1]))
 		{
 			number = ft_atol(argv[i + 1]);
-			if (number < -2147483648 || number > 2147483647)
-				return ;
 			stack->stack_a[i] = number;
 			i++;
 		}
@@ -83,6 +81,8 @@ int	main(int ac, char **av)
 	ft_is_all_digits(ac, av);
 	stack = malloc(sizeof(t_stack));
 	ft_start_stacks(stack, (ac - 1));
+	if (ft_check_limits(av) == 1)
+		return (0);
 	ft_fill_stack(ac, av, stack);
 	check_errors_in_stack(stack);
 	if (ac <= 1 || stack_sorted_a(stack))

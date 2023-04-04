@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/30 13:39:54 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/04 15:48:21 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int		out_of_limits(t_stack *stack);
 int		duplicated_element(t_stack *stack);
 int		stack_sorted_a(t_stack *stack);
 int		stack_sorted_b(t_stack *stack);
+
+/* errors.c: */
+int		ft_check_limits(char **argv);
 
 /* operation_swap.c: */
 void	sa(t_stack *stack);

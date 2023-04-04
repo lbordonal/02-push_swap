@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 15:48:28 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/04 15:31:53 by lbordona         ###   ########.fr       */
+/*   Created: 2023/04/04 15:45:34 by lbordona          #+#    #+#             */
+/*   Updated: 2023/04/04 15:50:25 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/push_swap.h"
 
-long	ft_atol(const char *str)
+int	ft_check_limits(char **argv)
 {
-	long	result;
-	int		sign;
+	int	i;
+	int	check;
 
-	result = 0;
-	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
+	i = 1;
+	check = 0;
+	while (argv[i])
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		if (ft_atol(argv[i]) > 2147483647 || ft_atol(argv[i]) < -2147483648)
+		{
+			ft_printf("%s\n", "Error");
+			check += 1;
+			return (check);
+		}
+		i++;
 	}
-	while (ft_isdigit((int)*str))
-	{
-		result = result * 10 + (*str - '0');
-		str++;
-	}
-	return (result * sign);
+	return (check);
 }

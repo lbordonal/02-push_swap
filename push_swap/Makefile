@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 17:25:18 by lbordona          #+#    #+#              #
-#    Updated: 2023/03/29 18:00:22 by lbordona         ###   ########.fr        #
+#    Updated: 2023/04/04 15:46:44 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = srcs/push_swap.c \
 	srcs/sort_utils_1.c \
 	srcs/sort_utils_2.c \
 	srcs/sort_small.c \
-	srcs/sort_big.c
+	srcs/sort_big.c \
+	srcs/errors.c
 
 OBJS = $(SRCS:%.c=%.o)
 
