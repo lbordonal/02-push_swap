@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/04 15:50:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:02:27 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,13 @@ int	main(int ac, char **av)
 	stack = malloc(sizeof(t_stack));
 	ft_start_stacks(stack, (ac - 1));
 	if (ft_check_limits(av) == 1)
-		return (0);
+		free_all(stack);
 	ft_fill_stack(ac, av, stack);
 	check_errors_in_stack(stack);
 	if (ac <= 1 || stack_sorted_a(stack))
-		return (0);
+		free_all(stack);
 	else
 		selection_sort(stack);
-	free(stack->stack_a);
-	free(stack->stack_b);
-	free(stack);
+	free_all(stack);
 	return (0);
 }

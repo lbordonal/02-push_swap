@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:45:34 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/04 15:50:25 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:02:26 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,12 @@ int	ft_check_limits(char **argv)
 		i++;
 	}
 	return (check);
+}
+
+void	free_all(t_stack *stack)
+{
+	free(stack->stack_a);
+	free(stack->stack_b);
+	free(stack);
+	exit (1);
 }

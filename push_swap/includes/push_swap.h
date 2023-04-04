@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/04 15:48:21 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:02:29 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		stack_sorted_b(t_stack *stack);
 
 /* errors.c: */
 int		ft_check_limits(char **argv);
+void	free_all(t_stack *stack);
 
 /* operation_swap.c: */
 void	sa(t_stack *stack);
