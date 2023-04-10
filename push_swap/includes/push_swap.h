@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 14:54:43 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:08:38 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,11 @@ void	double_pb_and_sort(t_stack *stack);
 void	rra_pa_ra_ra(t_stack *stack);
 void	ft_transform(t_stack *stack, int *temp_stack);
 void	fill_index(t_stack *stack);
-void	find_top_bottom(t_stack *stack);
+void	find_top_bottom_mid(t_stack *stack);
 
 /* sort_utils_2.c: */
 void	pushback_to_a(t_stack *stack);
 void	pushback_to_a_smarter(t_stack *stack, int pos);
+void	ra_or_rra(t_stack *stack);
 
 #endif

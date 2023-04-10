@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/04 18:56:29 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:07:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	pushback_to_a(t_stack *stack)
 		pa(stack);
 }
 
-/* ---not working--- */
 void	pushback_to_a_smarter(t_stack *stack, int pos)
 {
 	int	i;
@@ -34,10 +33,22 @@ void	pushback_to_a_smarter(t_stack *stack, int pos)
 	i = 0;
 	while (i < size && stack->len_b)
 	{
-		if ((stack->stack_b[0] & (1 << (pos + 1))) == 0)
+		if ((stack->stack_b[0] & (1 << (pos + 1))) == 1)
 			rb(stack);
 		else
 			pa(stack);
 		i++;
 	}
+}
+void	ra_or_rra(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->stack_a[i] != 0)
+		i++;
+	if (stack->mid - i >= 0)
+		ra(stack);
+	else
+		rra(stack);
 }

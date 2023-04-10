@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:34:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/21 23:46:06 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:04:09 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_stack
 	int			len_a;
 	int			len_b;
 	int			bottom;
+	int			mid;
 	int			top;
 }				t_stack;
 

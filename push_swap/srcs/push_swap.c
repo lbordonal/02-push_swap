@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 14:56:13 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:26:14 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_start_stacks(t_stack *stack, int len)
 	stack->len_a = 0;
 	stack->len_b = 0;
 	stack->bottom = 0;
+	stack->mid = 0;
 	stack->top = 0;
 }
 
@@ -58,7 +59,7 @@ void	check_errors_in_stack(t_stack *stack)
 void	selection_sort(t_stack *stack)
 {
 	fill_index(stack);
-	find_top_bottom(stack);
+	find_top_bottom_mid(stack);
 	if (stack->len_a == 1)
 		return ;
 	else if (stack->len_a == 2)
@@ -67,9 +68,9 @@ void	selection_sort(t_stack *stack)
 		ft_sort_three(stack);
 	else if (stack->len_a <= 5)
 		ft_sort_five(stack);
-	else if (stack->len_a <= 25)
+	else if (stack->len_a <= 60)
 		ft_crazy_sort(stack);
-	else if (stack->len_a > 25)
+	else if (stack->len_a > 60)
 		ft_sort(stack);
 	return ;
 }
