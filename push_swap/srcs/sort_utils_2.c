@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 17:07:49 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:17:16 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	pushback_to_a_smarter(t_stack *stack, int pos)
 		i++;
 	}
 }
+
 void	ra_or_rra(t_stack *stack)
 {
 	int	i;
