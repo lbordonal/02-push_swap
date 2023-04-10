@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:43:37 by lbordona          #+#    #+#             */
-/*   Updated: 2023/03/29 18:13:59 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:06:52 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,17 @@ void	ft_sort_five(t_stack *stack)
 			ra(stack);
 		}
 	}
+}
+
+void	push_max_and_min(stack)
+{
+	int	*a;
+	int	i;
+
+	i = 0;
+	a = stack->stack_a;
+	find_top_bottom_mid(stack);
+	while (a[i] != stack->top || a[i] != stack->bottom)
+		i++;
+	pb(stack);
 }
