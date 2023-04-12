@@ -6,22 +6,16 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:43:37 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/12 20:54:50 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:27:25 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_sort_two_a(t_stack *stack)
+void	ft_sort_two(t_stack *stack)
 {
 	if (stack->stack_a[0] > stack->stack_a[1])
 		sa(stack);
-}
-
-void	ft_sort_two_b(t_stack *stack)
-{
-	if (stack->stack_b[0] > stack->stack_b[1])
-		sb(stack);
 }
 
 void	ft_sort_three(t_stack *stack)

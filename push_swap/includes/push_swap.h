@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/12 20:57:42 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:29:23 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
 
 /* sort_small.c: */
-void	ft_sort_two_a(t_stack *stack);
-void	ft_sort_two_b(t_stack *stack);
+void	ft_sort_two(t_stack *stack);
 void	ft_sort_three(t_stack *stack);
 void	ft_sort_five(t_stack *stack);
 
