@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 17:17:16 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:21:26 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,28 @@ void	ra_or_rra(t_stack *stack)
 		ra(stack);
 	else
 		rra(stack);
+}
+
+void	push_top_and_bottom_to_b(t_stack *stack)
+{
+	int	*a;
+	int	top;
+	int	bottom;
+
+	find_top_bottom_mid(stack);
+	a = stack->stack_a;
+	top = stack->top;
+	bottom = stack->bottom;
+	while (stack->len_a != 3)
+	{
+		if (a[0] == top || a[0] == bottom)
+			pb(stack);
+		else
+		{
+			if ((a[1] == top || a[1] == bottom) || (a[2] == top || a[2] == bottom))
+				ra(stack);
+			else
+				rra(stack);
+		}
+	}
 }

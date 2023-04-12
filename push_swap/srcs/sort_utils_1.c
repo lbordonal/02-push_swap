@@ -6,26 +6,23 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:56:16 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 16:05:48 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:54:49 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	double_pb_and_sort(t_stack *stack)
+void	pa_ra_pa(t_stack *stack)
 {
-	pb(stack);
-	pb(stack);
-	ft_sort_two_b(stack);
-	if (stack_sorted_a(stack) == 0)
-		ft_sort_three(stack);
-}
-
-void	rra_pa_ra_ra(t_stack *stack)
-{
-	rra(stack);
 	pa(stack);
 	ra(stack);
+	pa(stack);
+}
+
+void	pa_pa_ra(t_stack *stack)
+{
+	pa(stack);
+	pa(stack);
 	ra(stack);
 }
 

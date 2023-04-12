@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:43:37 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 23:06:52 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:54:50 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,40 +52,10 @@ void	ft_sort_three(t_stack *stack)
 
 void	ft_sort_five(t_stack *stack)
 {
-	int	*a;
-	int	*b;
-
-	a = stack->stack_a;
-	b = stack->stack_b;
-	double_pb_and_sort(stack);
-	while (stack->len_b > 0)
-	{
-		if (b[0] < a[0])
-			pa(stack);
-		else if (b[0] > a[0] && b[0] < a[1])
-		{
-			pa(stack);
-			sa(stack);
-		}
-		else if (b[0] > a[0] && b[0] > a[1] && b[0] < a[2])
-			rra_pa_ra_ra(stack);
-		else if (b[0] > a[2])
-		{
-			pa(stack);
-			ra(stack);
-		}
-	}
-}
-
-void	push_max_and_min(stack)
-{
-	int	*a;
-	int	i;
-
-	i = 0;
-	a = stack->stack_a;
-	find_top_bottom_mid(stack);
-	while (a[i] != stack->top || a[i] != stack->bottom)
-		i++;
-	pb(stack);
+	push_top_and_bottom_to_b(stack);
+	ft_sort_three(stack);
+	if (stack->stack_b[0] > stack->stack_b[1])
+		pa_ra_pa(stack);
+	else
+		pa_pa_ra(stack);
 }

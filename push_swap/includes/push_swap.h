@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:22:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/10 16:08:38 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:57:42 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	ft_crazy_sort(t_stack *stack);
 void	ft_sort(t_stack *stack);
 
 /* sort_utils_1.c: */
-void	double_pb_and_sort(t_stack *stack);
-void	rra_pa_ra_ra(t_stack *stack);
+void	pa_ra_pa(t_stack *stack);
+void	pa_pa_ra(t_stack *stack);
 void	ft_transform(t_stack *stack, int *temp_stack);
 void	fill_index(t_stack *stack);
 void	find_top_bottom_mid(t_stack *stack);
@@ -73,5 +73,6 @@ void	find_top_bottom_mid(t_stack *stack);
 void	pushback_to_a(t_stack *stack);
 void	pushback_to_a_smarter(t_stack *stack, int pos);
 void	ra_or_rra(t_stack *stack);
+void	push_top_and_bottom_to_b(t_stack *stack);
 
 #endif
