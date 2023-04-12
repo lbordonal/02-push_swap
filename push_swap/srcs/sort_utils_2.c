@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:58:44 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/12 21:21:26 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:22:31 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void	push_top_and_bottom_to_b(t_stack *stack)
 			pb(stack);
 		else
 		{
-			if ((a[1] == top || a[1] == bottom) || (a[2] == top || a[2] == bottom))
+			if ((a[1] == top || a[1] == bottom)
+				|| (a[2] == top || a[2] == bottom))
 				ra(stack);
 			else
 				rra(stack);
