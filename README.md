@@ -21,6 +21,32 @@ This repository contains code developed at 42 Porto for push_swap Project, from 
 <a href="https://github.com/lbordonal/02-push_swap/blob/main/Subject/en.subject.pdf">Click here</a> for the subject of this project.
 <br /><br />
 
+<h2 align="left">
+	:computer: Usage
+</h2>
+1- Clone this repository: </br>
+<code>git clone https://github.com/lbordonal/02-push_swap.git</code> </br></br>
+
+2- Navigate to push_swap folder: </br>
+<code>cd 02-push_swap/push_swap/</code><br /><br />
+
+3- Run with make: </br>
+<code>make</code><br /><br />
+
+4- Run push_swap with: </br>
+<code>./push_swap number_1 number_2 number_3 ... </code> or <code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG</code><br /><br />
+
+5- If you want to use the tester, run with: </br>
+<code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG | ./checker_linux $ARG</code><br /><br />
+
+6- If you want to see how many moves it takes to sort, run with: </br>
+<code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG | wc -l</code><br /><br />
+
+
+<h2 align="left">
+	:medal_sports: Mandatory Part
+</h2>
+
 
 <br />
 <br />
