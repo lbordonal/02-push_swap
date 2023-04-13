@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 19:50:46 by lbordona          #+#    #+#             */
-/*   Updated: 2023/04/12 21:30:28 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:23:47 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	check_errors_in_stack(t_stack *stack)
 	if (duplicated_element(stack) || out_of_limits(stack))
 	{
 		ft_printf("%s\n", "Error");
+		free_all(stack);
 		exit (0);
 	}
 	return ;
