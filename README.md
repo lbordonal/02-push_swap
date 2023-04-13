@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-	<img src="https://img.shields.io/badge/score-not%20submitted-red?style=for-the-badge" />
-	<img src="https://img.shields.io/github/languages/code-size/lbordonal/02-push_swap?style=for-the-badge" />
-	<img src="https://img.shields.io/github/languages/count/lbordonal/02-push_swap?style=for-the-badge" />
-	<img src="https://img.shields.io/github/languages/top/lbordonal/02-push_swap?style=for-the-badge" />
-	<img src="https://img.shields.io/github/last-commit/lbordonal/02-push_swap?style=for-the-badge" />
+	<img src="https://img.shields.io/badge/score-not%20submitted-red?style=flat-square" />
+	<img src="https://img.shields.io/github/languages/code-size/lbordonal/02-push_swap?style=flat-square" />
+	<img src="https://img.shields.io/github/languages/count/lbordonal/02-push_swap?style=flat-square" />
+	<img src="https://img.shields.io/github/languages/top/lbordonal/02-push_swap?style=flat-square" />
+	<img src="https://img.shields.io/github/last-commit/lbordonal/02-push_swap?style=flat-square" />
 </p>
 
 <p align="center">
