@@ -34,13 +34,13 @@ This repository contains code developed at 42 Porto for push_swap Project, from 
 <code>make</code><br /><br />
 
 4- Run push_swap with: </br>
-<code>./push_swap number_1 number_2 number_3 ... </code> or <code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG</code><br /><br />
+<code>./push_swap number_1 number_2 ... </code> or <code>ARG="number_1 number_2 ..."; ./push_swap $ARG</code><br /><br />
 
 5- If you want to use the tester, run with: </br>
-<code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG | ./checker_linux $ARG</code><br /><br />
+<code>ARG="number_1 number_2 ..."; ./push_swap $ARG | ./checker_linux $ARG</code><br /><br />
 
 6- If you want to see how many moves it takes to sort, run with: </br>
-<code>ARG="number_1 number_2 number_3 ..."; ./push_swap $ARG | wc -l</code><br /><br />
+<code>ARG="number_1 number_2 ..."; ./push_swap $ARG | wc -l</code><br /><br />
 
 
 <h2 align="left">
