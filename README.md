@@ -91,10 +91,11 @@ Evaluation:
 <h3 align="left">
 Sort Algorithms:
 </h3>
-* Sorting 3 values: ```ft_sort_three``` → brute force, no more than 6 possible combinations to sort 3 numbers.
-* Sorting 5 values: ```ft_sort_five``` → search for the minimum and the maximum values in stack A, push it to stack B → sort stack A with ```ft_sort_three``` → push to stack A the elements in stack B, inserting them in the correct position in stack A.
-* Sorting less than 60 values: ```ft_crazy_sort``` → find the lowest element in stack A and push it to stack B → do it again until stack A has only one element → pushback to stack A all the elements from stack B.
-* Sorting more than 60 values: ```ft_sort``` → Radix sort.
+
+* Sorting 3 values: <code>ft_sort_three</code> → brute force, no more than 6 possible combinations to sort 3 numbers.
+* Sorting 5 values: <code>ft_sort_five</code> → search for the minimum and the maximum values in stack A, push it to stack B → sort stack A with <code>ft_sort_three</code> → push to stack A the elements in stack B, inserting them in the correct position in stack A.
+* Sorting less than 60 values: <code>ft_crazy_sort</code> → find the lowest element in stack A and push it to stack B → do it again until stack A has only one element → pushback to stack A all the elements from stack B.
+* Sorting more than 60 values: <code>ft_sort</code> → Radix sort.
 
 
 <br />
