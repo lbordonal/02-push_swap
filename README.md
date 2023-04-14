@@ -70,9 +70,9 @@ Moves:
 Evaluation:
 </h3>
 
-* Sorting 3 values: no more than 3 moves.
-* Sorting 5 values: no more than 12 moves.
-* Sorting 100 values: rating from 1 to 5 points depending on the number of moves:
+* **Sorting 3 values:** no more than 3 moves.
+* **Sorting 5 values:** no more than 12 moves.
+* **Sorting 100 values:** grade from 1 to 5 points depending on the number of moves:
 
   * 5 points for less than 700
   * 4 points for less than 900
@@ -80,7 +80,7 @@ Evaluation:
   * 2 points for less than 1300
   * 1 point for less than 1500
 
-* Sorting 500 values: rating from 1 to 5 points depending on the number of moves:
+* **Sorting 500 values:** grade from 1 to 5 points depending on the number of moves:
 
   * 5 points for less than 5500
   * 4 points for less than 7000
@@ -92,10 +92,10 @@ Evaluation:
 Sort Algorithms:
 </h3>
 
-* Sorting 3 values: <code>ft_sort_three</code> → brute force, no more than 6 possible combinations to sort 3 numbers.
-* Sorting 5 values: <code>ft_sort_five</code> → search for the minimum and the maximum values in stack A, push it to stack B → sort stack A with <code>ft_sort_three</code> → push to stack A the elements in stack B, inserting them in the correct position in stack A.
-* Sorting less than 60 values: <code>ft_crazy_sort</code> → find the lowest element in stack A and push it to stack B → do it again until stack A has only one element → pushback to stack A all the elements from stack B.
-* Sorting more than 60 values: <code>ft_sort</code> → Radix sort.
+* **Sorting 3 values:** <code>ft_sort_three</code> → brute force, no more than 6 possible combinations to sort 3 numbers.
+* **Sorting 5 values:** <code>ft_sort_five</code> → search for the minimum and the maximum values in stack A, push it to stack B → sort stack A with <code>ft_sort_three</code> → push to stack A the elements in stack B, inserting them in the correct position in stack A.
+* **Sorting less than 60 values:** <code>ft_crazy_sort</code> → find the lowest element in stack A and push it to stack B → do it again until stack A has only one element → pushback to stack A all the elements from stack B.
+* **Sorting more than 60 values:** <code>ft_sort</code> → Radix sort.
 
 
 <br />
