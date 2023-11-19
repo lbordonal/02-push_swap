@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/lbordonal/lbordonal/blob/main/.images/42_Cursus_-_push_swap.png">
+  <img src="https://github.com/lbordonal/lbordonal/blob/main/.titles/push_swap.png">
 </p>
 
 <p align="center">
